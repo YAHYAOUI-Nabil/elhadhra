@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+:root {
+  --swiper-navigation-color: #3b3b3a;
+  --swiper-navigation-size: 16px;
+  --swiper-navigation-top-offset: 50%;
+  --swiper-navigation-sides-offset: 0px;
+}

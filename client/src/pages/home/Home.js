@@ -1,6 +1,10 @@
+import Recents from "./components/Recents"
+
 const Home = () => {
   return (
-    <div className="h-[1000px]">Home</div>
+    <div className="px-24 py-4">
+      <Recents /> 
+    </div>
   )
 }
 export default Home
