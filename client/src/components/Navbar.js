@@ -10,7 +10,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="sticky top-[2px] flex items-center justify-between h-9 bg-black mt-[2px] px-24 text-white">
+    <div className="sticky z-50 top-[2px] flex items-center justify-between h-9 bg-black mt-[2px] px-24 text-white">
       <div>
         <NavLink to="/">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
