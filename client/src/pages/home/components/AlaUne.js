@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Article from './Article';
-import Img from '../../../assets/logo_elhadhira.png';
 import Title from '../../../components/Title';
 
 const AlaUne = () => {
@@ -15,6 +14,7 @@ const AlaUne = () => {
             category="IMMIGRATION" 
             title="Utopia 56 : Livre Noir s’est introduit 2 mois dans l’association immigrationniste" 
             size={3}
+            divider={true}
             author="Nabil Yahyaoui" 
             description="Fondée à Calais en 2015 par Gaël Manzi, ancien régisseur de camping, l’association Utopia 56 vient en aide aux sans-papiers et milite pour leur régularisation massive. Enquête. ..." />
         </div>
@@ -24,6 +24,7 @@ const AlaUne = () => {
             category="INTERNATIONAL" 
             title="Guyane : enfer vert pour métal jaune" 
             size={2}
+            divider={true}
           />
 
           <Article 
@@ -31,6 +32,7 @@ const AlaUne = () => {
             category="SOCIÉTÉ" 
             title="Macron et la culture française, une histoire de désamour" 
             size={2}
+            divider={true}
           />
         </div>
         <div className='w-[22%] bg-[#F8EEE2] p-4 flex flex-col gap-5'>
