@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Home from "./pages/home/Home";
 
 import "./App.css";
+import Account from "./pages/myAccount/Account";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/mon-compte" element={<Account />} />
       </Routes>
       <Footer />
     </BrowserRouter>
