@@ -6,13 +6,13 @@ import Title from '../../../components/Title';
 const AlaUne = () => {
   return (
     <div className='flex flex-col gap-4 my-4'>
-      <Title title="à la une" />
+      <Title title="à la une :" color="black" />
       <div className='flex gap-4'>
         <div className='w-1/2'>
           <Article 
             image="https://livrenoir.fr/wp-content/uploads/2023/09/utopia-1-1024x576.jpg" 
             category="IMMIGRATION" 
-            title="Utopia 56 : Livre Noir s’est introduit 2 mois dans l’association immigrationniste" 
+            title="Utopia 56 : Livre Noir s'est introduit 2 mois dans l'association immigrationniste" 
             size={3}
             divider={true}
             author="Nabil Yahyaoui" 

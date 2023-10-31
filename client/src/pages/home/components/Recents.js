@@ -10,7 +10,6 @@ import 'swiper/css/navigation';
 
 // import required modules
 import { Autoplay, Navigation } from 'swiper/modules';
-import Img from "../../../assets/logo_elhadhira.png";
 
 const Recents = () => {
   return (

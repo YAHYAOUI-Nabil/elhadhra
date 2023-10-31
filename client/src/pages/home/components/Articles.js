@@ -9,7 +9,7 @@ const Articles = (props) => {
   const { title } = props;
   return (
     <div className='flex flex-col gap-4 my-4'>
-      <Title title={title} />
+      <Title title={title} color="black" />
       <div className='flex flex-row gap-5'>
         <Article 
           image="https://livrenoir.fr/wp-content/uploads/2023/09/utopia-1-1024x576.jpg" 
