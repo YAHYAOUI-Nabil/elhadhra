@@ -8,7 +8,7 @@ exports.signup = (req, res, next) => {
     const newUser = new User({
       identifier: req.body.identifier, 
       email: req.body.username,
-      firsName: req.body.firsName,
+      firstName: req.body.firstName,
       lastName: req.body.lastName,
       phone: req.body.phone,
       isFan: req.body.isFan,
