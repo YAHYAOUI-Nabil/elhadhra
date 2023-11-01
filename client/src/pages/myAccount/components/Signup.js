@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
 
 const Signup = () => {
     const {
@@ -7,11 +8,19 @@ const Signup = () => {
         handleSubmit,
         formState: { errors },
       } = useForm();
+
+    const submit = (data) => {
+        console.log(data);
+        axios
+            .post(`${process.env.REACT_APP_API_URL}/auth/signup`, data)
+            .then((response) => {console.log(response)})
+            .catch((error) => {console.log(error)})
+    }
     return (
         <div className='flex flex-col gap-4 w-full bg-[#F5F5F5] p-8'>
             <h2 className='font-bold text-xl'>S'enregistrer</h2>
             <div>
-                <form className='flex flex-col gap-5' onSubmit={handleSubmit((data) => console.log(data))}>
+                <form className='flex flex-col gap-5' onSubmit={handleSubmit(submit)}>
                     <label htmlFor="identifier">Identifiant *</label>
                     <input 
                         className='focus:outline-none h-9 p-3 text-[#8B8DA5]'
@@ -19,13 +28,13 @@ const Signup = () => {
                         type='text'
                         {...register('identifier', { required: true })} />
                     {errors.identifier && <p>Identifiant est obligatoire.</p>}
-                    <label htmlFor="email">E-mail *</label>
+                    <label htmlFor="username">E-mail *</label>
                     <input 
                         className='focus:outline-none h-9 p-3 text-[#8B8DA5]'
-                        id='email'
+                        id='username'
                         type='email'
-                        {...register('email', { required: true })} />
-                    {errors.email && <p>E-mail est obligatoire.</p>}
+                        {...register('username', { required: true })} />
+                    {errors.username && <p>E-mail est obligatoire.</p>}
                     <label htmlFor="password">Mot de passe *</label>
                     <input 
                         className='focus:outline-none h-9 p-3 text-[#8B8DA5]'

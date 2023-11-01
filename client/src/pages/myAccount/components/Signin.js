@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
 
 const Signin = () => {
     const {
@@ -8,18 +9,26 @@ const Signin = () => {
         handleSubmit,
         formState: { errors },
       } = useForm();
+    
+    const submit = (data) => {
+        console.log(data);
+        axios
+            .post(`${process.env.REACT_APP_API_URL}/auth/signin`, data)
+            .then((response) => {console.log(response)})
+            .catch((error) => {console.log(error)})
+    }
     return (
         <div className='flex flex-col gap-4 w-full bg-[#F5F5F5] p-8 h-fit'>
             <h2 className='font-bold text-xl'>Se connecter</h2>
             <div>
-                <form className='flex flex-col gap-5' onSubmit={handleSubmit((data) => console.log(data))}>
-                    <label htmlFor="name">Identifiant ou e-mail *</label>
+                <form className='flex flex-col gap-5' onSubmit={handleSubmit(submit)}>
+                    <label htmlFor="username">Identifiant ou e-mail *</label>
                     <input 
                         className='focus:outline-none h-9 p-3 text-[#8B8DA5]'
-                        id='name' 
+                        id='username' 
                         type='text'
-                        {...register('name', { required: true })} />
-                    {errors.name && <p>Last name is required.</p>}
+                        {...register('username', { required: true })} />
+                    {errors.username && <p>E-mail est obligatoire.</p>}
                     <label htmlFor="password">Mot de passe *</label>
                     <input 
                         className='focus:outline-none h-9 p-3 text-[#8B8DA5]'
