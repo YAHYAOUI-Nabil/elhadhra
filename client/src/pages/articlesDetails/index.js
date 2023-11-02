@@ -31,7 +31,10 @@ const Index = () => {
             summary={article.summary}
             avatar={article.authorAvatar}
             author={article.author}
-            image={article.imageUrl} />
+            image={article.imageUrl}
+            imageDescription={article.imageDescription}
+            description={article.description}
+            contents={article.contents} />
         </div>
         <div className='w-1/3'>
           <FlashActualite />
