@@ -36,14 +36,14 @@ exports.createArticle = (req, res) => {
 exports.getArticles = (req, res) => {
     Article.find({})
            .then((articles) => {
-                res.statusCode = 200;
-                res.setHeader('Content-Type', 'application/json');
-                res.json({articles});
+               res.statusCode = 200;
+               res.setHeader('Content-Type', 'application/json');
+               res.json({articles});
            })
            .catch((error) => {
-                res.statusCode = 404;
-                res.setHeader('Content-Type', 'application/json');
-                res.json({message: error.message});
+               res.statusCode = 404;
+               res.setHeader('Content-Type', 'application/json');
+               res.json({message: error.message});
            })
 }
 

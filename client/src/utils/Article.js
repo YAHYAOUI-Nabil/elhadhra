@@ -13,7 +13,7 @@ const Article = (props) => {
             <p className='text-red-900 uppercase text-lg font-bold'>{category}</p>
             {divider && <div className='border-b-[1px] border-black w-16'></div>}
             <NavLink to={'/'}><p className={`text-black text-${size}xl font-semibold hover:text-red-900`}>{title}</p></NavLink>
-            <p className='text-sm -mt-2'>{author}</p>
+            {author && <p className='text-sm -mt-2'>Rédigé par {author}</p>}
             <p className='text-base'>{description}</p>
         </div>
     </div>

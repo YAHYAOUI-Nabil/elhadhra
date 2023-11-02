@@ -9,6 +9,7 @@ const session = require('express-session');
 
 const userRoutes = require('./routes/userRoutes');
 const articleRoutes = require('./routes/articleRoutes');
+const videoRoutes = require('./routes/videoRoutes');
 const connectDB = require("./middlewares/connectDB");
 
 const app = express();
@@ -49,6 +50,7 @@ connectDB();
 
 app.use('/auth', userRoutes);
 app.use('/articles', articleRoutes);
+app.use('/videos', videoRoutes);
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('./client/build'));
