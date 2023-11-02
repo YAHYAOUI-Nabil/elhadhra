@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Article from './Article';
-import Title from '../../../components/Title';
+import Article from '../../../utils/Article';
+import Title from '../../../utils/Title';
 
 const AlaUne = () => {
   return (

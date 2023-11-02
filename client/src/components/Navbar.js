@@ -1,11 +1,11 @@
 import { NavLink } from "react-router-dom";
 const Navbar = () => {
    const navigation = [
-    { name: "politique", href: "/" },
-    { name: "société", href: "/" },
-    { name: "immigration", href: "/" },
-    { name: "union-européenne", href: "/" },
-    { name: "international", href: "/" },
+    { name: "politique", href: "/category/politique" },
+    { name: "société", href: "/category/societe" },
+    { name: "immigration", href: "/category/immigration" },
+    { name: "union-européenne", href: "/category/union-europeenne" },
+    { name: "international", href: "/category/international" },
     { name: "qui somme-nous?", href: "/" },
   ];
 

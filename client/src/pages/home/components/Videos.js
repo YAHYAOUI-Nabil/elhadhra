@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 
-import Title from "../../../components/Title";
+import Title from "../../../utils/Title";
 
 const Videos = () => {
   return (

@@ -2,8 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { VscTriangleRight } from 'react-icons/vsc';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
-import Title from '../../../components/Title';
-import Article from './Article';
+import Title from '../../../utils/Title';
+import Article from '../../../utils/Article';
 
 const Articles = (props) => {
   const { title } = props;

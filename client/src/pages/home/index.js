@@ -7,7 +7,7 @@ import Slider from "./components/Slider"
 import Tribunes from "./components/Tribunes"
 import Videos from "./components/Videos"
 
-const Home = () => {
+const Index = () => {
   return (
     <div className="px-24 py-4">
       <Recents /> 
@@ -26,4 +26,4 @@ const Home = () => {
     </div>
   )
 }
-export default Home
+export default Index
