@@ -2,8 +2,8 @@ import axios from 'axios';
 import React, { useState,useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import FavoriteArticle from './components/FavoriteArticle';
-import FlashActualite from './components/FlashActualite';
 import Article from './components/Article';
+import FlashAct from '../../components/FlashAct';
 
 const Index = () => {
   const [articles, setArticles] = useState([])
@@ -36,7 +36,7 @@ const Index = () => {
           })}
         </div>
         <div className='w-1/4'>
-          <FlashActualite />
+          <FlashAct />
         </div>
       </div>
     </div>
