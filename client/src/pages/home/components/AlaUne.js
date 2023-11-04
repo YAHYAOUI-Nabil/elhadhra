@@ -8,8 +8,8 @@ const AlaUne = () => {
   return (
     <div className='flex flex-col gap-4 my-4'>
       <Title title="à la une :" color="black" />
-      <div className='flex gap-4'>
-        <div className='w-1/2'>
+      <div className='gap-[1%] grid grid-cols-[49%,29%,20%]'>
+        <div className=''>
           <Article 
             image="https://livrenoir.fr/wp-content/uploads/2023/09/utopia-1-1024x576.jpg" 
             category="IMMIGRATION" 
@@ -19,7 +19,7 @@ const AlaUne = () => {
             author="Nabil Yahyaoui" 
             description="Fondée à Calais en 2015 par Gaël Manzi, ancien régisseur de camping, l’association Utopia 56 vient en aide aux sans-papiers et milite pour leur régularisation massive. Enquête. ..." />
         </div>
-        <div className='w-[28%] flex flex-col gap-6'>
+        <div className='flex flex-col gap-6'>
           <Article 
             image="https://livrenoir.fr/wp-content/uploads/2023/09/guyane-departement-enquete-traffic-richesses.jpg"
             category="INTERNATIONAL" 
@@ -36,7 +36,7 @@ const AlaUne = () => {
             divider={true}
           />
         </div>
-        <div className='w-[22%] h-96'>
+        <div className='bg-[#F8EEE2]'>
           <FlashAct />
         </div>
       </div>

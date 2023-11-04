@@ -18,7 +18,7 @@ const FlashAct = () => {
       }, [])
   return (
     <div className='bg-[#F8EEE2] p-4 flex flex-col gap-5'>
-        <p className='text-2xl font-bold'>Flash actualité</p>
+        <p className='text-4xl font-bold'>Flash actualité</p>
         {articles.slice(0,2).map((article) => {
             const { _id, title, publishDate } = article;
             const time = new Date(publishDate);

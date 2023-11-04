@@ -2,8 +2,11 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react'
 
 import { useParams } from 'react-router-dom';
-import FlashActualite from '../articlesByCategory/components/FlashActualite';
 import ArticleDetails from './components/ArticleDetails';
+import FlashAct from '../../components/FlashAct';
+import FollowUs from '../../components/FollowUs';
+import LettreInf from '../../components/LettreInf';
+import SalePoint from '../../components/SalePoint';
 
 const Index = () => {
   const [article, setArticle] = useState({})
@@ -36,8 +39,11 @@ const Index = () => {
             description={article.description}
             contents={article.contents} />
         </div>
-        <div className='w-1/3'>
-          <FlashActualite />
+        <div className='w-[28%]  flex flex-col gap-4'>
+          <SalePoint />
+          <FlashAct />
+          <LettreInf />
+          <FollowUs />
         </div>
       </div>
     </div>

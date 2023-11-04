@@ -4,6 +4,9 @@ import { useLocation } from 'react-router-dom';
 import FavoriteArticle from './components/FavoriteArticle';
 import Article from './components/Article';
 import FlashAct from '../../components/FlashAct';
+import FollowUs from '../../components/FollowUs';
+import LettreInf from '../../components/LettreInf';
+import SalePoint from '../../components/SalePoint';
 
 const Index = () => {
   const [articles, setArticles] = useState([])
@@ -35,8 +38,11 @@ const Index = () => {
             );
           })}
         </div>
-        <div className='w-1/4'>
+        <div className='w-1/4 flex flex-col gap-4'>
+          <SalePoint />
           <FlashAct />
+          <LettreInf />
+          <FollowUs />
         </div>
       </div>
     </div>
