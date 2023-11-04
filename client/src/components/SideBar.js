@@ -6,12 +6,16 @@ import { BsInstagram, BsYoutube, BsTwitter, BsTelegram, BsXLg } from "react-icon
 import logo from '../assets/logo_elhadhira.png'
 import { journal, studio, legal, apropos } from '../data/data'
 import ItemsMenu from '../utils/ItemsMenu'
+import { useStateContext } from '../context/ContextProvider';
 
 const SideBar = () => {
+    const { activeMenu, setActiveMenu } = useStateContext();
   return (
-    <div className='bg-black/80 w-screen h-screen'>
-        <div className='relative flex flex-col gap-6 bg-black overflow-y-scroll w-[350px] h-screen p-6'>
-            <div className='absolute flex items-center justify-center w-6 h-6 cursor-pointer bg-white hover:bg-red-600 hover:text-white rounded-full top-2 right-2'>
+    <div className='bg-black/80 w-screen h-screen flex'>
+        <div className='relative flex flex-col gap-6 bg-black overflow-y-scroll scrollbar-hide w-[25%] h-screen p-6'>
+            <div 
+                onClick={() => setActiveMenu(!activeMenu)}
+                className='absolute flex items-center justify-center w-6 h-6 cursor-pointer bg-white hover:bg-red-600 hover:text-white rounded-full top-2 right-2'>
                 <span className='rounded-full'>
                     <BsXLg className='w-4 h-4' />
                 </span>
@@ -92,6 +96,7 @@ const SideBar = () => {
                     </div>
             </div>
         </div>
+        <div className='h-screen w-[75%]' onClick={() => setActiveMenu(false)}></div>
     </div>
   )
 }

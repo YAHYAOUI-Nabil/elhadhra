@@ -11,14 +11,20 @@ import ArticlesByCategory from "./pages/articlesByCategory";
 import ArticleDetails from "./pages/articlesDetails";
 import AboutUS from "./pages/aboutUs";
 import SideBar from "./components/SideBar";
+import { useStateContext } from "./context/ContextProvider";
 
 function App() {
+  const { activeMenu, setActiveMenu } = useStateContext();
   return (
     <BrowserRouter>
       <div className="relative">
-        <div className="fixed z-[9999]">
-          <SideBar />
-        </div>
+        { 
+          activeMenu 
+          && 
+          <div className="fixed z-[9999]">
+            <SideBar />
+          </div>
+        }
         <div>
           <Header />
           <Routes>
