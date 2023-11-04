@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { BsInstagram, BsYoutube, BsTwitter, BsTelegram } from "react-icons/bs"
+import { BsInstagram, BsYoutube, BsTwitter, BsTelegram } from "react-icons/bs";
 
 const Footer = () => {
   return (
