@@ -6,7 +6,7 @@ const Navbar = () => {
     { name: "immigration", href: "/category/immigration" },
     { name: "union-européenne", href: "/category/union-europeenne" },
     { name: "international", href: "/category/international" },
-    { name: "qui somme-nous?", href: "/" },
+    { name: "qui somme-nous?", href: "/qui-sommes-nous" },
   ];
 
   return (
@@ -26,7 +26,11 @@ const Navbar = () => {
               <NavLink 
                 key={name} 
                 to={href}
-                className="hover:text-red-600">
+                className={({ isActive }) =>
+                  [
+                    isActive ? "text-red-600" : "", "hover:text-red-600"
+                  ].join(" ")
+                }>
                 {name}
               </NavLink>
             )
