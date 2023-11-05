@@ -11,8 +11,8 @@ import { useStateContext } from '../context/ContextProvider';
 const SideBar = () => {
     const { activeMenu, setActiveMenu } = useStateContext();
   return (
-    <div className='bg-black/80 w-screen h-screen flex'>
-        <div className='relative flex flex-col gap-6 bg-black overflow-y-scroll scrollbar-hide w-[25%] h-screen p-6'>
+    <div className='w-screen h-screen flex'>
+        <div className={`relative flex flex-col gap-6 bg-black overflow-y-scroll scrollbar-hide w-[25%] h-screen p-6`}>
             <div 
                 onClick={() => setActiveMenu(!activeMenu)}
                 className='absolute flex items-center justify-center w-6 h-6 cursor-pointer bg-white hover:bg-red-600 hover:text-white rounded-full top-2 right-2'>

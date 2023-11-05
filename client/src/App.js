@@ -23,10 +23,14 @@ function App() {
         { 
           activeMenu 
           && 
-          <div className="fixed z-[9999]">
-            <SideBar />
+          <div className="fixed top-0 left-0 z-[9998] w-screen h-screen bg-black/80">
           </div>
         }
+        
+        <div className={`fixed top-0 left-0 z-[9999] ${activeMenu ? 'translate-x-0' : '-translate-x-full'} ease-in-out duration-1000`}>
+          <SideBar />
+        </div>
+        
         <div>
           <Header />
           <ScrollToTop>

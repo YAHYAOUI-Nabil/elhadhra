@@ -1,0 +1,1 @@
+export const articleByCategoriesUrl = `${process.env.REACT_APP_API_URL}/articles/category/?category=`
