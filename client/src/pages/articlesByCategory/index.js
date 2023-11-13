@@ -1,5 +1,4 @@
-import axios from 'axios';
-import React, { useState,useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { AiOutlineDoubleRight } from "react-icons/ai";
 import FavoriteArticle from './components/FavoriteArticle';
@@ -8,23 +7,27 @@ import FlashAct from '../../components/FlashAct';
 import FollowUs from '../../components/FollowUs';
 import LettreInf from '../../components/LettreInf';
 import SalePoint from '../../components/SalePoint';
-import { articleByCategoriesUrl } from '../../config/apiUrls';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { getArticles } from './articlesSlice';
+import { getArticlesByCategory } from '../../api';
 
 const Index = () => {
-  const [articles, setArticles] = useState([])
+
+  const dispatch = useDispatch();
+  const articles = useSelector((state) => state.articles.articles)
   const location = useLocation();
   const category = location.pathname.split('/')[location.pathname.split('/').length - 1]
+  
+  const fn = async () => {
+    const { data } = await getArticlesByCategory(category);
+    dispatch(getArticles(data.articles))
+  }
 
   useEffect(() => {
-    axios.get(articleByCategoriesUrl+category)
-         .then((response) => {
-            console.log(response.data.articles)
-            setArticles(response.data.articles)
-         })
-         .catch((error) => {
-            console.log(error)
-         })
+    fn();
   }, [category])
+  
   return (
     <div className="px-24 py-4">
       <p className='flex items-center gap-1 uppercase text-xs text-gray-500'>accueil <span><AiOutlineDoubleRight /></span> {category}</p>
@@ -33,7 +36,7 @@ const Index = () => {
 
           <FavoriteArticle category={category} article={articles[0]} />
 
-          {articles?.map((article) => {
+          {articles?.slice(1,articles?.length).map((article) => {
             const {_id, title, summary, imageUrl, publishDate} = article;
             return (
               <Article key={_id} id={_id} title={title} summary={summary} image={imageUrl} date={publishDate} />
