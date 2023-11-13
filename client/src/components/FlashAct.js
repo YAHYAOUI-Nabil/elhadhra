@@ -9,7 +9,6 @@ const FlashAct = () => {
     useEffect(() => {
         axios.get(`http://localhost:5000/articles`)
              .then((response) => {
-                console.log(response.data.articles)
                 setArticles(response.data.articles)
              })
              .catch((error) => {

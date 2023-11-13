@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 
 const FavoriteArticle = (props) => {
   const { category, article } = props;
-  console.log(article?.imageUrl)
   return (
     <div className='flex flex-col gap-8 my-6 border-b-2 border-black pb-6'>
         <Title title={category} color="black" />
