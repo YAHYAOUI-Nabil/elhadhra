@@ -1,12 +1,14 @@
 import axios from 'axios';
 import React, { useState,useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { AiOutlineDoubleRight } from "react-icons/ai";
 import FavoriteArticle from './components/FavoriteArticle';
 import Article from './components/Article';
 import FlashAct from '../../components/FlashAct';
 import FollowUs from '../../components/FollowUs';
 import LettreInf from '../../components/LettreInf';
 import SalePoint from '../../components/SalePoint';
+import { articleByCategoriesUrl } from '../../config/apiUrls';
 
 const Index = () => {
   const [articles, setArticles] = useState([])
@@ -14,7 +16,7 @@ const Index = () => {
   const category = location.pathname.split('/')[location.pathname.split('/').length - 1]
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/articles/category/?category=${category}`)
+    axios.get(articleByCategoriesUrl+category)
          .then((response) => {
             console.log(response.data.articles)
             setArticles(response.data.articles)
@@ -25,7 +27,7 @@ const Index = () => {
   }, [category])
   return (
     <div className="px-24 py-4">
-      <p className='uppercase text-xs'>accueil {category}</p>
+      <p className='flex items-center gap-1 uppercase text-xs text-gray-500'>accueil <span><AiOutlineDoubleRight /></span> {category}</p>
       <div className='flex flex-row gap-6'>
         <div className='w-3/4'>
 
