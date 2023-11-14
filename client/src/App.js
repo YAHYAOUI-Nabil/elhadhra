@@ -14,6 +14,7 @@ import SideBar from "./components/SideBar";
 import ScrollToTop from "./utils/ScrollToTop";
 
 import { useStateContext } from "./context/ContextProvider";
+import Profile from "./pages/myAccount/components/Profile";
 
 function App() {
   const { activeMenu } = useStateContext();
@@ -38,6 +39,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/qui-sommes-nous" element={<AboutUS />} />
               <Route path="/mon-compte" element={<Account />} />
+              <Route path="/mon-compte/profil" element={<Profile />} />
               <Route path="/category/:category" element={<ArticlesByCategory />} />
               <Route path="/category/article/:id" element={<ArticleDetails />} />
             </Routes>

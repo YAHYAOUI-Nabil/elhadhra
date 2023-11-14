@@ -9,8 +9,7 @@ import LettreInf from '../../components/LettreInf';
 import SalePoint from '../../components/SalePoint';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { getArticles } from './articlesSlice';
-import { getArticlesByCategory } from '../../api';
+import { getArticlesByCategoryApi } from '../../api/index';
 
 const Index = () => {
 
@@ -19,13 +18,10 @@ const Index = () => {
   const location = useLocation();
   const category = location.pathname.split('/')[location.pathname.split('/').length - 1]
   
-  const fn = async () => {
-    const { data } = await getArticlesByCategory(category);
-    dispatch(getArticles(data.articles))
-  }
+  
 
   useEffect(() => {
-    fn();
+    getArticlesByCategoryApi(category, dispatch);
   }, [category])
   
   return (
