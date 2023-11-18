@@ -1,7 +1,2 @@
-import axios from 'axios';
-
-import { articleByCategoriesUrl } from '../config/apiUrls';
-
-const API = axios.create();
-
-export const getArticlesByCategory = (category) => API.get(articleByCategoriesUrl+category)
+export { getArticlesByCategoryApi } from '../pages/articlesByCategory/articlesAPI';
+export { getArticleDetailsApi } from '../pages/articlesDetails/articleDetailsApi';

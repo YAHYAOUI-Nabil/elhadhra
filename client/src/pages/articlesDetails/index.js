@@ -1,28 +1,23 @@
-import axios from 'axios';
-import React, { useState, useEffect } from 'react'
-
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+
 import ArticleDetails from './components/ArticleDetails';
 import FlashAct from '../../components/FlashAct';
 import FollowUs from '../../components/FollowUs';
 import LettreInf from '../../components/LettreInf';
 import SalePoint from '../../components/SalePoint';
+import { getArticleDetailsApi } from '../../api';
 
 const Index = () => {
-  const [article, setArticle] = useState({})
+  const dispatch = useDispatch();
+  const article = useSelector((state) => state.article.article)
   const {id} = useParams();
-  console.log(id)
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/articles/article/${id}`)
-         .then((response) => {
-            console.log(response.data.article)
-            setArticle(response.data.article)
-         })
-         .catch((error) => {
-            console.log(error)
-         })
+    getArticleDetailsApi(id, dispatch)
   }, [id])
+
   return (
     <div className="px-24 py-4">
       <p className='uppercase text-xs'>accueil / {article.category}</p>
