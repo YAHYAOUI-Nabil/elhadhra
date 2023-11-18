@@ -9,7 +9,7 @@ import LettreInf from '../../components/LettreInf';
 import SalePoint from '../../components/SalePoint';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { getArticlesByCategoryApi } from '../../api/index';
+import { getArticlesByCategoryApi } from '../../api';
 
 const Index = () => {
 

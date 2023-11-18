@@ -7,8 +7,7 @@ import FlashAct from '../../components/FlashAct';
 import FollowUs from '../../components/FollowUs';
 import LettreInf from '../../components/LettreInf';
 import SalePoint from '../../components/SalePoint';
-import { getArticleDetail } from './articleSlice';
-import { getArticleDetailApi } from '../../api';
+import { getArticleDetailsApi } from '../../api';
 
 const Index = () => {
   const dispatch = useDispatch();
@@ -16,11 +15,7 @@ const Index = () => {
   const {id} = useParams();
 
   useEffect(() => {
-    const fn = async () => {
-      const { data } = await getArticleDetailApi(id);
-      dispatch(getArticleDetail(data.article));
-    }
-    fn();
+    getArticleDetailsApi(id, dispatch)
   }, [id])
 
   return (
