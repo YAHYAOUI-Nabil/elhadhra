@@ -1,17 +1,14 @@
 import axios from 'axios';
-
+import { createAsyncThunk } from '@reduxjs/toolkit'
 import { articleByCategoryUrl } from '../../config/apiUrls';
-import { getArticles } from './articlesSlice';
 
 const API = axios.create();
 
 
-export const getArticlesByCategoryApi = (category, dispatch) => {
-    API.get(articleByCategoryUrl+category)
-        .then((res) => {
-            dispatch(getArticles(res.data.articles))
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-}
+export const fetchArticlesByCategory = createAsyncThunk(
+    "articles/fetchArticles",
+    async (category) => {
+        const response = await API.get(articleByCategoryUrl+category);
+        return response.data.articles
+    }
+) 

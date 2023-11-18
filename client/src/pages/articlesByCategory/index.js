@@ -9,7 +9,7 @@ import LettreInf from '../../components/LettreInf';
 import SalePoint from '../../components/SalePoint';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { getArticlesByCategoryApi } from '../../api';
+import { fetchArticlesByCategory } from '../../api';
 
 const Index = () => {
 
@@ -21,8 +21,8 @@ const Index = () => {
   
 
   useEffect(() => {
-    getArticlesByCategoryApi(category, dispatch);
-  }, [category])
+    dispatch(fetchArticlesByCategory(category));
+  }, [category, dispatch])
   
   return (
     <div className="px-24 py-4">
