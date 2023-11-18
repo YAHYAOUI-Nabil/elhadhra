@@ -7,7 +7,7 @@ import FlashAct from '../../components/FlashAct';
 import FollowUs from '../../components/FollowUs';
 import LettreInf from '../../components/LettreInf';
 import SalePoint from '../../components/SalePoint';
-import { getArticleDetailsApi } from '../../api';
+import { fetchArticleById } from '../../api';
 
 const Index = () => {
   const dispatch = useDispatch();
@@ -15,8 +15,8 @@ const Index = () => {
   const {id} = useParams();
 
   useEffect(() => {
-    getArticleDetailsApi(id, dispatch)
-  }, [id])
+    dispatch(fetchArticleById(id))
+  }, [id, dispatch])
 
   return (
     <div className="px-24 py-4">

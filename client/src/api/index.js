@@ -1,2 +1,2 @@
-export { getArticlesByCategoryApi } from '../pages/articlesByCategory/articlesAPI';
-export { getArticleDetailsApi } from '../pages/articlesDetails/articleDetailsApi';
+export { fetchArticlesByCategory } from '../pages/articlesByCategory/articlesAPI';
+export { fetchArticleById } from '../pages/articlesDetails/articleDetailsApi';
