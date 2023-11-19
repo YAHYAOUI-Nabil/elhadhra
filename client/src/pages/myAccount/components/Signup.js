@@ -1,8 +1,11 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import axios from 'axios';
+import { useDispatch } from "react-redux";
+
+import { signup } from "../../../api"
 
 const Signup = () => {
+    const dispatch = useDispatch();
     const {
         register,
         handleSubmit,
@@ -10,12 +13,9 @@ const Signup = () => {
       } = useForm();
 
     const submit = (data) => {
-        console.log(data);
-        axios
-            .post(`${process.env.REACT_APP_API_URL}/auth/signup`, data)
-            .then((response) => {console.log(response)})
-            .catch((error) => {console.log(error)})
+        dispatch(signup(data))
     }
+    
     return (
         <div className='flex flex-col gap-4 w-full bg-[#F5F5F5] p-8'>
             <h2 className='font-bold text-xl'>S'enregistrer</h2>

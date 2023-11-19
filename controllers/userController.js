@@ -30,6 +30,11 @@ exports.signup = (req, res, next) => {
             res.json({
               success: true,
               token: token,
+              pseudo: user.identifier,
+              email: user.email,
+              firsName: user.firstName,
+              lastName: user.lastName,
+              phone: user.phone,
               status: 'You are Successfully registered!',
             });
           })
@@ -46,6 +51,11 @@ exports.signin = (req, res, next) => {
     res.json({
       success: true,
       token: token,
+      pseudo: req.user.identifier,
+      email: req.user.email,
+      firstName: req.user.firstName,
+      lastName: req.user.lastName,
+      phone: req.user.phone,
       status: 'You are successfully logged in!',
     });
   };
