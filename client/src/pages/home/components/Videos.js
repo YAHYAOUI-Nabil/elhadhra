@@ -12,9 +12,7 @@ const Videos = () => {
             <div className='flex flex-col gap-2 w-2/3'>
                 <a href='https://www.youtube.com/watch?v=1ZqzVPVS8FI'>
                     <div className="bg-[url('https://livrenoir.fr/wp-content/uploads/2023/10/IMG-0224-SITE-1024x768.jpg')] bg-cover bg-no-repeat bg-center h-96 flex justify-center items-center">
-                        <a href="https://www.youtube.com/watch?v=1ZqzVPVS8FI">
-                            <img src="https://livrenoir.fr/wp-content/uploads/elementor/thumbs/play-icon-qc3pjl2itaw8h186zk9h73cnszqnqm6tt7fgwp5kz8.png" alt="video title"/>
-                        </a>
+                        <img src="https://livrenoir.fr/wp-content/uploads/elementor/thumbs/play-icon-qc3pjl2itaw8h186zk9h73cnszqnqm6tt7fgwp5kz8.png" alt="video title"/>
                     </div>
                 </a>
                 <div>
@@ -27,9 +25,7 @@ const Videos = () => {
                         <div className='w-1/2'>
                             <a href='https://www.youtube.com/watch?v=1ZqzVPVS8FI'>
                                 <div className="bg-[url('https://livrenoir.fr/wp-content/uploads/2023/10/milices-citoyennes-sondage-peine-de-mort-insecurite-.jpg')] bg-cover bg-no-repeat bg-center h-24 flex justify-center items-center">
-                                    <a href="https://www.youtube.com/watch?v=1ZqzVPVS8FI">
-                                        <img src="https://livrenoir.fr/wp-content/uploads/elementor/thumbs/play-icon-qc3pjl2itaw8h186zk9h73cnszqnqm6tt7fgwp5kz8.png" alt="video title"/>
-                                    </a>
+                                    <img src="https://livrenoir.fr/wp-content/uploads/elementor/thumbs/play-icon-qc3pjl2itaw8h186zk9h73cnszqnqm6tt7fgwp5kz8.png" alt="video title"/>
                                 </div>
                             </a>
                         </div>
@@ -41,9 +37,7 @@ const Videos = () => {
                         <div className='w-1/2'>
                             <a href='https://www.youtube.com/watch?v=1ZqzVPVS8FI'>
                                 <div className="bg-[url('https://livrenoir.fr/wp-content/uploads/2023/10/pexels-ahmed-akacha-15803788-1024x683.jpg')] bg-cover bg-no-repeat bg-center h-24 flex justify-center items-center">
-                                    <a href="https://www.youtube.com/watch?v=1ZqzVPVS8FI">
-                                        <img src="https://livrenoir.fr/wp-content/uploads/elementor/thumbs/play-icon-qc3pjl2itaw8h186zk9h73cnszqnqm6tt7fgwp5kz8.png" alt="video title"/>
-                                    </a>
+                                    <img src="https://livrenoir.fr/wp-content/uploads/elementor/thumbs/play-icon-qc3pjl2itaw8h186zk9h73cnszqnqm6tt7fgwp5kz8.png" alt="video title"/>
                                 </div>
                             </a>
                         </div>
@@ -55,9 +49,7 @@ const Videos = () => {
                         <div className='w-1/2'>
                             <a href='https://www.youtube.com/watch?v=1ZqzVPVS8FI'>
                                 <div className="bg-[url('https://livrenoir.fr/wp-content/uploads/2023/10/pexels-basil-mk-247040-1024x683.jpg')] bg-cover bg-no-repeat bg-center h-24 flex justify-center items-center">
-                                    <a href="https://www.youtube.com/watch?v=1ZqzVPVS8FI">
-                                        <img src="https://livrenoir.fr/wp-content/uploads/elementor/thumbs/play-icon-qc3pjl2itaw8h186zk9h73cnszqnqm6tt7fgwp5kz8.png" alt="video title"/>
-                                    </a>
+                                    <img src="https://livrenoir.fr/wp-content/uploads/elementor/thumbs/play-icon-qc3pjl2itaw8h186zk9h73cnszqnqm6tt7fgwp5kz8.png" alt="video title"/>
                                 </div>
                             </a>
                         </div>

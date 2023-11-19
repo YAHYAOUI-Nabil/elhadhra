@@ -1,7 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import axios from 'axios';
+import { jwtDecode } from 'jwt-decode';
 import "./App.css";
 
+import { store } from "./reduxTK/store";
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -15,6 +17,19 @@ import ScrollToTop from "./utils/ScrollToTop";
 
 import { useStateContext } from "./context/ContextProvider";
 import Profile from "./pages/myAccount/components/Profile";
+import { logout } from "./api";
+import PrivateRoute from "./utils/PrivateRoute";
+
+
+const token = localStorage.getItem('accessToken');
+if (token) {
+  const decodedToken = jwtDecode(token);
+  if (decodedToken.exp * 1000 < Date.now()) {
+    store.dispatch(logout());
+  } else {
+    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+  }
+}
 
 function App() {
   const { activeMenu } = useStateContext();
@@ -39,7 +54,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/qui-sommes-nous" element={<AboutUS />} />
               <Route path="/mon-compte" element={<Account />} />
-              <Route path="/mon-compte/profil" element={<Profile />} />
+              <Route path="/mon-compte/profil" element={<PrivateRoute Component={Profile} /> } />
               <Route path="/category/:category" element={<ArticlesByCategory />} />
               <Route path="/category/article/:id" element={<ArticleDetails />} />
             </Routes>
@@ -47,7 +62,6 @@ function App() {
           <Footer />
         </div>
       </div>
-      
     </BrowserRouter>
   );
 }

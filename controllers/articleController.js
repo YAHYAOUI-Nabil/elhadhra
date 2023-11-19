@@ -48,6 +48,7 @@ exports.getArticles = (req, res) => {
 }
 
 exports.getArticlesByCategory = (req, res) => {
+    console.log(req)
     const {category} = req.query;
     Article.find({category})
            .then((articles) => {

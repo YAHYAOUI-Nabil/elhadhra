@@ -39,7 +39,8 @@ export const articlesSlice = createSlice({
           .addCase(fetchArticlesByCategory.rejected, (state, action) => {
             return {
               ...state,
-              error: action.error.message
+              error: action.error.message,
+              articles: []
             }
           })
   }
