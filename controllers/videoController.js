@@ -26,7 +26,7 @@ exports.getVideos = (req,res) => {
          .then((videos) => {
             res.statusCode = 200;
             res.setHeader('Content-Type', 'application/json');
-            res.json(videos);
+            res.json({videos});
          })
          .catch((error) => {
             res.statusCode = 404;

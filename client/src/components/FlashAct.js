@@ -1,20 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useEffect } from 'react';
+import { fetchAllArticles } from '../api';
+import { useDispatch, useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 
 const FlashAct = () => {
-    const [articles, setArticles] = useState([])
+    const articles = useSelector((state) => state.homeState.articles)
+    const dispatch = useDispatch();
     const months = ["Jan", "Fev", "Mar", "Avr", "Jui", "Jul", "Aou", "Sep", "Oct", "Nov", "Dec"]
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/articles`)
-             .then((response) => {
-                setArticles(response.data.articles)
-             })
-             .catch((error) => {
-                console.log(error)
-             })
-      }, [])
+        dispatch(fetchAllArticles())
+      }, [dispatch])
   return (
     <div className='bg-[#F8EEE2] p-4 flex flex-col gap-5'>
         <p className='text-4xl font-bold'>Flash actualité</p>
@@ -28,7 +25,9 @@ const FlashAct = () => {
                         <p className='text-sm'>{time.getHours()}h{time.getMinutes() ? time.getMinutes() : '00' }</p>
                     </div>
                     <div>
-                        <p className='text-sm'>{title}</p>
+                        <NavLink to={`/category/article/${_id}`} className='text-sm'>
+                            {title}
+                        </NavLink>
                     </div>
                 </div>
             );

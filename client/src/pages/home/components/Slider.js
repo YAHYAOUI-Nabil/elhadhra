@@ -10,8 +10,9 @@ import 'swiper/css/navigation';
 
 // import required modules
 import { Autoplay, Pagination } from 'swiper/modules';
+import { NavLink } from 'react-router-dom';
 
-const Slider = ({title}) => {
+const Slider = ({title, articles}) => {
   return (
     <div className='flex flex-col gap-2 my-4 bg-red-900 -mx-24 px-24 py-8'>
       <Title title={title} color="white" />
@@ -29,86 +30,25 @@ const Slider = ({title}) => {
           }}
           modules={[Pagination, Autoplay]}
       >
-          <SwiperSlide className="mb-10">
+        {articles.slice(0,8).map((item) => (
+          <SwiperSlide key={item._id} className="mb-10">
               <div className='flex flex-col items-center justify-center'>
-                  <img className='w-96 h-60 object-cover' src="https://livrenoir.fr/wp-content/uploads/2023/10/von-der-leyen.jpg" alt='Nabil' />
+                  <NavLink to={`/category/article/${item._id}`}>
+                    <img 
+                      className='w-96 h-48 object-cover' 
+                      src={item.imageUrl}
+                      alt={item.title} />
+                  </NavLink>
                   <div className='flex flex-col gap-1 items-center justify-center bg-white p-3'>
-                    <p className='text-center text-sm font-bold leading-4'>Nabil.Y: let's live in peaceful world without israel</p>
+                    <NavLink to={`/category/article/${item._id}`}>
+                      <p className='text-center text-sm font-bold leading-4'>{item.title}</p>
+                    </NavLink>
                     <div className='border-b-[2px] border-black w-16'></div>
-                    <p className='text-center text-sm text-gray-400'>Nabil Yahyaoui</p>
+                    <p className='text-center text-sm text-gray-400'>{item.author}</p>
                   </div>
               </div>
           </SwiperSlide>
-          <SwiperSlide className="mb-10">
-              <div className='flex flex-col items-center justify-center'>
-                  <img className='w-96 h-60 object-cover' src="https://livrenoir.fr/wp-content/uploads/2023/09/florence-bergeaud-blackler-grand-entretien-islamisme-menace-freriste-1024x576.jpg" alt='Nabil' />
-                  <div className='flex flex-col gap-1 items-center justify-center bg-white p-3'>
-                    <p className='text-center text-sm font-bold leading-4'>Nabil.Y: let's live in peaceful world without israel</p>
-                    <div className='border-b-[2px] border-black w-16'></div>
-                    <p className='text-center text-sm text-gray-400'>Nabil Yahyaoui</p>
-                  </div>
-              </div>
-          </SwiperSlide>
-          <SwiperSlide className="mb-10">
-              <div className='flex flex-col items-center justify-center'>
-                  <img className='w-96 h-60 object-cover' src="https://livrenoir.fr/wp-content/uploads/2023/10/photo1697102159-1-1024x682.jpeg" alt='Nabil' />
-                  <div className='flex flex-col gap-1 items-center justify-center bg-white p-3'>
-                    <p className='text-center text-sm font-bold leading-4'>Nabil.Y: let's live in peaceful world without israel</p>
-                    <div className='border-b-[2px] border-black w-16'></div>
-                    <p className='text-center text-sm text-gray-400'>Nabil Yahyaoui</p>
-                  </div>
-              </div>
-          </SwiperSlide>
-          <SwiperSlide className="mb-10">
-              <div className='flex flex-col items-center justify-center'>
-                  <img className='w-96 h-60 object-cover' src="https://livrenoir.fr/wp-content/uploads/2023/10/israel-palestine-gaza-guerre-blesses-bilan-1024x1024.jpg" alt='Nabil' />
-                  <div className='flex flex-col gap-1 items-center justify-center bg-white p-3'>
-                    <p className='text-center text-sm font-bold leading-4'>Nabil.Y: let's live in peaceful world without israel</p>
-                    <div className='border-b-[2px] border-black w-16'></div>
-                    <p className='text-center text-sm text-gray-400'>Nabil Yahyaoui</p>
-                  </div>
-              </div>
-          </SwiperSlide>
-          <SwiperSlide className="mb-10">
-              <div className='flex flex-col items-center justify-center'>
-                  <img className='w-96 h-60 object-cover' src="https://livrenoir.fr/wp-content/uploads/2023/10/von-der-leyen.jpg" alt='Nabil' />
-                  <div className='flex flex-col gap-1 items-center justify-center bg-white p-3'>
-                    <p className='text-center text-sm font-bold leading-4'>Nabil.Y: let's live in peaceful world without israel</p>
-                    <div className='border-b-[2px] border-black w-16'></div>
-                    <p className='text-center text-sm text-gray-400'>Nabil Yahyaoui</p>
-                  </div>
-              </div>
-          </SwiperSlide>
-          <SwiperSlide className="mb-10">
-              <div className='flex flex-col items-center justify-center'>
-                  <img className='w-96 h-60 object-cover' src="https://livrenoir.fr/wp-content/uploads/2023/09/florence-bergeaud-blackler-grand-entretien-islamisme-menace-freriste-1024x576.jpg" alt='Nabil' />
-                  <div className='flex flex-col gap-1 items-center justify-center bg-white p-3'>
-                    <p className='text-center text-sm font-bold leading-4'>Nabil.Y: let's live in peaceful world without israel</p>
-                    <div className='border-b-[2px] border-black w-16'></div>
-                    <p className='text-center text-sm text-gray-400'>Nabil Yahyaoui</p>
-                  </div>
-              </div>
-          </SwiperSlide>
-          <SwiperSlide className="mb-10">
-              <div className='flex flex-col items-center justify-center'>
-                  <img className='w-96 h-60 object-cover' src="https://livrenoir.fr/wp-content/uploads/2023/10/photo1697102159-1-1024x682.jpeg" alt='Nabil' />
-                  <div className='flex flex-col gap-1 items-center justify-center bg-white p-3'>
-                    <p className='text-center text-sm font-bold leading-4'>Nabil.Y: let's live in peaceful world without israel</p>
-                    <div className='border-b-[2px] border-black w-16'></div>
-                    <p className='text-center text-sm text-gray-400'>Nabil Yahyaoui</p>
-                  </div>
-              </div>
-          </SwiperSlide>
-          <SwiperSlide className="mb-10">
-              <div className='flex flex-col items-center justify-center'>
-                  <img className='w-96 h-60 object-cover' src="https://livrenoir.fr/wp-content/uploads/2023/10/israel-palestine-gaza-guerre-blesses-bilan-1024x1024.jpg" alt='Nabil' />
-                  <div className='flex flex-col gap-1 items-center justify-center bg-white p-3'>
-                    <p className='text-center text-sm font-bold leading-4'>Nabil.Y: let's live in peaceful world without israel</p>
-                    <div className='border-b-[2px] border-black w-16'></div>
-                    <p className='text-center text-sm text-gray-400'>Nabil Yahyaoui</p>
-                  </div>
-              </div>
-          </SwiperSlide>
+        ))}
         </Swiper>
       </div>
     </div>

@@ -15,6 +15,7 @@ import storage from 'redux-persist/lib/storage';
 import articlesSlice from '../pages/articlesByCategory/articlesSlice';
 import articleSlice from '../pages/articlesDetails/articleSlice';
 import userSlice from "../pages/myAccount/userSlice";
+import homeSlice from '../pages/home/homeSlice';
 
 const persistConfig = {
   key: 'root',
@@ -25,7 +26,8 @@ const persistConfig = {
 const rootReducer = combineReducers({ 
     articles: articlesSlice,
     article: articleSlice,
-    user: userSlice
+    user: userSlice,
+    homeState: homeSlice
  });
 
 

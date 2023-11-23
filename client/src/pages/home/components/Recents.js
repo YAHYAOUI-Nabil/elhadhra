@@ -10,8 +10,9 @@ import 'swiper/css/navigation';
 
 // import required modules
 import { Autoplay, Navigation } from 'swiper/modules';
+import { NavLink } from 'react-router-dom';
 
-const Recents = () => {
+const Recents = ({articles}) => {
   return (
     <>
       <Swiper
@@ -25,66 +26,21 @@ const Recents = () => {
         navigation={true}
         modules={[Navigation, Autoplay]}
       >
-        <SwiperSlide className="">
-            <div className='flex flex-col items-center justify-center gap-4 p-2'>
-                <img className='w-16 h-16 rounded-2xl object-cover' src="https://livrenoir.fr/wp-content/uploads/2023/10/livre-noir-a-infiltre-utopia-56-lasso-pro-migrants-300x169.jpg" alt='Nabil' />
-                <p className='text-center text-xs'>Nabil.Y: let's live in peaceful world without israel</p>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide className="">
-            <div className='flex flex-col items-center justify-center gap-4 p-2'>
-                <img className='w-16 h-16 rounded-2xl object-cover' src="https://livrenoir.fr/wp-content/uploads/2023/09/utopia-1-300x169.jpg" alt='Nabil' />
-                <p className='text-center text-xs'>Nabil.Y: let's live in peaceful world without israel</p>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide className="">
-            <div className='flex flex-col items-center justify-center gap-4 p-2'>
-                <img className='w-16 h-16 rounded-2xl object-cover' src="https://livrenoir.fr/wp-content/uploads/2023/09/03_LivreNoir_SiteWeb_Plan-de-travail-1-copie-29-300x169.jpg" alt='Nabil' />
-                <p className='text-center text-xs'>Nabil.Y: let's live in peaceful world without israel</p>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide className="">
-            <div className='flex flex-col items-center justify-center gap-4 p-2'>
-                <img className='w-16 h-16 rounded-2xl object-cover' src="https://livrenoir.fr/wp-content/uploads/2023/09/guyane-departement-enquete-traffic-richesses-300x169.jpg" alt='Nabil' />
-                <p className='text-center text-xs'>Nabil.Y: let's live in peaceful world without israel</p>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide className="">
-            <div className='flex flex-col items-center justify-center gap-4 p-2'>
-                <img className='w-16 h-16 rounded-2xl object-cover' src="https://livrenoir.fr/wp-content/uploads/2023/10/georges-fenech-les-delinquants-n-ont-peur-ni-de-la-police-ni-de-la-justice-300x169.jpg" alt='Nabil' />
-                <p className='text-center text-xs'>Nabil.Y: let's live in peaceful world without israel</p>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide className="">
-            <div className='flex flex-col items-center justify-center gap-4 p-2'>
-                <img className='w-16 h-16 rounded-2xl object-cover' src="https://livrenoir.fr/wp-content/uploads/2023/10/livre-noir-a-infiltre-utopia-56-lasso-pro-migrants-300x169.jpg" alt='Nabil' />
-                <p className='text-center text-xs'>Nabil.Y: let's live in peaceful world without israel</p>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide className="">
-            <div className='flex flex-col items-center justify-center gap-4 p-2'>
-                <img className='w-16 h-16 rounded-2xl object-cover' src="https://livrenoir.fr/wp-content/uploads/2023/09/utopia-1-300x169.jpg" alt='Nabil' />
-                <p className='text-center text-xs'>Nabil.Y: let's live in peaceful world without israel</p>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide className="">
-            <div className='flex flex-col items-center justify-center gap-4 p-2'>
-                <img className='w-16 h-16 rounded-2xl object-cover' src="https://livrenoir.fr/wp-content/uploads/2023/09/03_LivreNoir_SiteWeb_Plan-de-travail-1-copie-29-300x169.jpg" alt='Nabil' />
-                <p className='text-center text-xs'>Nabil.Y: let's live in peaceful world without israel</p>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide className="">
-            <div className='flex flex-col items-center justify-center gap-4 p-2'>
-                <img className='w-16 h-16 rounded-2xl object-cover' src="https://livrenoir.fr/wp-content/uploads/2023/09/guyane-departement-enquete-traffic-richesses-300x169.jpg" alt='Nabil' />
-                <p className='text-center text-xs'>Nabil.Y: let's live in peaceful world without israel</p>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide className="">
-            <div className='flex flex-col items-center justify-center gap-4 p-2'>
-                <img className='w-16 h-16 rounded-2xl object-cover' src="https://livrenoir.fr/wp-content/uploads/2023/10/georges-fenech-les-delinquants-n-ont-peur-ni-de-la-police-ni-de-la-justice-300x169.jpg" alt='Nabil' />
-                <p className='text-center text-xs'>Nabil.Y: let's live in peaceful world without israel</p>
-            </div>
-        </SwiperSlide>
+        {articles.slice(0,10).map((item) => (
+            <SwiperSlide key={item._id} className="">
+                <div className='flex flex-col items-center justify-center gap-4 p-2'>
+                    <NavLink to={`/category/article/${item._id}`}>
+                      <img 
+                        className='w-20 h-20 rounded-2xl object-cover' 
+                        src={item.imageUrl} 
+                        alt={item.title} />
+                    </NavLink>
+                    <NavLink to={`/category/article/${item._id}`}>
+                      <p className='text-center text-xs'>{item.title}</p>
+                    </NavLink>
+                </div>
+            </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );
