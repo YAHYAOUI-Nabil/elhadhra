@@ -11,6 +11,7 @@ import Home from "./pages/home";
 import Account from "./pages/myAccount";
 import ArticlesByCategory from "./pages/articlesByCategory";
 import ArticleDetails from "./pages/articlesDetails";
+import Videos from "./pages/videos";
 import AboutUS from "./pages/aboutUs";
 import SideBar from "./components/SideBar";
 import ScrollToTop from "./utils/ScrollToTop";
@@ -57,6 +58,7 @@ function App() {
               <Route path="/mon-compte/profil" element={<PrivateRoute Component={Profile} /> } />
               <Route path="/category/:category" element={<ArticlesByCategory />} />
               <Route path="/category/article/:id" element={<ArticleDetails />} />
+              <Route path="/category/videos" element={<Videos />} />
             </Routes>
           </ScrollToTop>
           <Footer />
