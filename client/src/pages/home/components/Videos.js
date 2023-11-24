@@ -22,16 +22,16 @@ const Videos = ({videos}) => {
             <div className='flex flex-col gap-4 w-1/3'>
                 <div className='flex flex-col gap-3'>
                     {videos?.slice(1,4).map((video) => (
-                        <div key={video._id} className='flex flex-row gap-2'>
+                        <div key={video?._id} className='flex flex-row gap-2'>
                             <div className='w-1/2'>
-                                <a href={video.videoUrl}>
+                                <a href={video?.videoUrl}>
                                     <div style={{ backgroundImage: `url(${video?.imageUrl})`}} className="bg-cover bg-no-repeat bg-center h-24 flex justify-center items-center">
-                                        <img src="https://livrenoir.fr/wp-content/uploads/elementor/thumbs/play-icon-qc3pjl2itaw8h186zk9h73cnszqnqm6tt7fgwp5kz8.png" alt="video title"/>
+                                        <img src="https://livrenoir.fr/wp-content/uploads/elementor/thumbs/play-icon-qc3pjl2itaw8h186zk9h73cnszqnqm6tt7fgwp5kz8.png" alt={video?.title}/>
                                     </div>
                                 </a>
                             </div>
                             <div className='w-1/2 pt-2'>
-                                <a href={video.videoUrl} className='text-sm leading-4 font-bold'>{video.title}</a>
+                                <a href={video?.videoUrl} className='text-sm leading-4 font-bold'>{video?.title}</a>
                             </div>
                         </div>
                     ))}

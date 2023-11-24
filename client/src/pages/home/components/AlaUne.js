@@ -29,11 +29,11 @@ const AlaUne = ({articles}) => {
         <div className='flex flex-col gap-6'>
           {list?.map((item) => (
             <Article 
-              key={item._id}
-              id={item._id}
-              image={item.imageUrl}
-              category={item.category}
-              title={item.title}
+              key={item?._id}
+              id={item?._id}
+              image={item?.imageUrl}
+              category={item?.category}
+              title={item?.title}
               size={2}
               divider={true}
               height="h-[200px]"
