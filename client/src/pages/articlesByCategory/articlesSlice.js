@@ -40,7 +40,8 @@ export const articlesSlice = createSlice({
             return {
               ...state,
               error: action.error.message,
-              articles: []
+              articles: [],
+              response: "get articles by category failed"
             }
           })
   }

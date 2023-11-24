@@ -16,18 +16,18 @@ const AlaUne = ({articles}) => {
       <div className='gap-[1%] grid grid-cols-[49%,29%,20%]'>
         <div className=''>
           <Article 
-            id={immigration._id}
-            image={immigration.imageUrl}
-            category={immigration.category}
-            title={immigration.title}
+            id={immigration?._id}
+            image={immigration?.imageUrl}
+            category={immigration?.category}
+            title={immigration?.title}
             size={3}
             divider={true}
-            author={immigration.author}
-            description={immigration.description}
+            author={immigration?.author}
+            description={immigration?.description}
             height="h-[300px]" />
         </div>
         <div className='flex flex-col gap-6'>
-          {list.map((item) => (
+          {list?.map((item) => (
             <Article 
               key={item._id}
               id={item._id}
