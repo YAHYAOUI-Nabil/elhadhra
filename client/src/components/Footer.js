@@ -48,19 +48,19 @@ const Footer = () => {
           <p className="text-gray-400 mb-3">Le Journal</p>
           <ul className="flex flex-col gap-2">
             <li>
-              <NavLink to={'/'}>Politique</NavLink>
+              <NavLink to={'/category/politique'}>Politique</NavLink>
             </li>
             <li>
-              <NavLink to={'/'}>Société</NavLink>
+              <NavLink to={'/category/societe'}>Société</NavLink>
             </li>
             <li>
-              <NavLink to={'/'}>Immigration</NavLink>
+              <NavLink to={'/category/immigration'}>Immigration</NavLink>
             </li>
             <li>
-              <NavLink to={'/'}>Union Européenne</NavLink>
+              <NavLink to={'/category/union-europeenne'}>Union Européenne</NavLink>
             </li>
             <li>
-              <NavLink to={'/'}>International</NavLink>
+              <NavLink to={'/category/international'}>International</NavLink>
             </li>
           </ul>
         </div>
@@ -68,7 +68,7 @@ const Footer = () => {
           <p className="text-gray-400 mb-3">le Studio</p>
           <ul className="flex flex-col gap-2">
             <li>
-              <NavLink to={'/'}>Vidéos</NavLink>
+              <NavLink to={'/category/videos'}>Vidéos</NavLink>
             </li>
             <li>
               <NavLink to={'/'}>Podcasts</NavLink>
