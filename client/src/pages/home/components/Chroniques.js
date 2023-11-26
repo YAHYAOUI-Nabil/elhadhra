@@ -15,7 +15,7 @@ import 'swiper/css/navigation';
 import { Autoplay, Pagination } from 'swiper/modules';
 
 const Chroniques = ({title, articles}) => {
-    const data= articles.filter((item) => item.category === "politique")
+    const data= articles.filter((item) => item.category === title)
   return (
     <div className='flex flex-col gap-2 my-4'>
         <Title title={title} color="black" />
@@ -54,8 +54,8 @@ const Chroniques = ({title, articles}) => {
         </div>
         <div className='flex justify-end -mt-2'>
             <div className='flex flex-row gap-2 items-center'>
-            <NavLink to={`/category/politique`} className='uppercase font-semibold text-xl'>toutes les chroniques</NavLink>
-            <NavLink to={`/category/politique`} className='flex items-center'><MdOutlineKeyboardArrowRight className='h-6 w-6' /></NavLink>
+            <NavLink to={`/category/${title}`} className='uppercase font-semibold text-xl'>toutes les chroniques</NavLink>
+            <NavLink to={`/category/${title}`} className='flex items-center'><MdOutlineKeyboardArrowRight className='h-6 w-6' /></NavLink>
             </div>
         </div>
     </div>

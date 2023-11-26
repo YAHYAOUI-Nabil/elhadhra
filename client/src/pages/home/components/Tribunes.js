@@ -15,11 +15,11 @@ import 'swiper/css/navigation';
 import { Autoplay, Pagination } from 'swiper/modules';
 
 const Tribunes = ({title, articles}) => {
-    const data= articles.filter((item) => item.category === "politique")
+    const data= articles.filter((item) => item.category === title)
 
   return (
     <div className='flex flex-col gap-2 my-4 -ml-24 pl-24 py-3 pr-3 bg-[#F8EEE2]'>
-        <Title title="Tribunes" color="black" />
+        <Title title={title} color="black" />
         <div className='mt-4'>
             <Swiper
                 slidesPerView={3.5}
@@ -49,8 +49,8 @@ const Tribunes = ({title, articles}) => {
         </div>
         <div className='flex justify-end -mt-2'>
             <div className='flex flex-row gap-2 items-center'>
-            <NavLink to={`/category/politique`} className='uppercase font-semibold text-xl'>toutes les tribunes</NavLink>
-            <NavLink to={`/category/politique`} className='flex items-center'><MdOutlineKeyboardArrowRight className='h-6 w-6' /></NavLink>
+            <NavLink to={`/category/${title}`} className='uppercase font-semibold text-xl'>toutes les tribunes</NavLink>
+            <NavLink to={`/category/${title}`} className='flex items-center'><MdOutlineKeyboardArrowRight className='h-6 w-6' /></NavLink>
             </div>
         </div>
     </div>
