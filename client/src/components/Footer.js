@@ -82,7 +82,7 @@ const Footer = () => {
           <p className="text-gray-400 mb-3">A propos</p>
           <ul className="flex flex-col gap-2">
             <li>
-              <NavLink to={'/'}>Qui sommes-nous ?</NavLink>
+              <NavLink to={'/qui-sommes-nous'}>Qui sommes-nous ?</NavLink>
             </li>
             <li>
               <NavLink to={'/'}>Abonnement</NavLink>
