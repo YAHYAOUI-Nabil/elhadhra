@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { signin, signup, logout, deleteAccount, editInfos } from '../../api';
+import { signin, signup, logout } from '../../api';
 
 const initialState = {
   loading: false,
@@ -10,8 +10,8 @@ const initialState = {
   isAuth: false
 }
 
-export const userSlice = createSlice({
-  name: 'user',
+export const authSlice = createSlice({
+  name: 'auth',
   initialState,
   reducers: {
     changeStateTrue: (state) => {
@@ -64,56 +64,12 @@ export const userSlice = createSlice({
               user: {}
             }
           })
-          .addCase(logout.pending, (state) => {
-            return {
-              ...state,
-              loading: true,
-            }
-          })
           .addCase(logout.fulfilled, (state) => {
             return initialState
-          })
-          .addCase(logout.rejected, (state) => {
-            return {
-              ...state,
-            }
-          })
-          .addCase(deleteAccount.pending, (state) => {
-            return {
-              ...state,
-              loading: true,
-            }
-          })
-          .addCase(deleteAccount.fulfilled, (state) => {
-            return initialState
-          })
-          .addCase(deleteAccount.rejected, (state) => {
-            return {
-              ...state,
-            }
-          })
-          .addCase(editInfos.pending, (state) => {
-            return {
-              ...state,
-              loading: true,
-            }
-          })
-          .addCase(editInfos.fulfilled, (state, action) => {
-            return {
-              ...state,
-              user: action.payload,
-              response: "user infos updated successfully"
-            }
-          })
-          .addCase(editInfos.rejected, (state) => {
-            return {
-              ...state,
-              response: "user infos not updated",
-            }
           })
   }
 })
 
-export const { changeStateTrue, changeStateFalse, clearResponse } = userSlice.actions
+export const { changeStateTrue, changeStateFalse, clearResponse } = authSlice.actions
 
-export default userSlice.reducer
+export default authSlice.reducer

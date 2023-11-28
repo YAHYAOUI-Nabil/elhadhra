@@ -4,3 +4,5 @@ export const articlesUrl = `${process.env.REACT_APP_API_URL}/articles`;
 export const videosUrl = `${process.env.REACT_APP_API_URL}/videos`;
 export const signinUrl = `${process.env.REACT_APP_API_URL}/auth/signin`;
 export const signupUrl = `${process.env.REACT_APP_API_URL}/auth/signup`;
+export const deleteAccountUrl = `${process.env.REACT_APP_API_URL}/auth/delete-account`;
+export const editInfosUrl = `${process.env.REACT_APP_API_URL}/auth/edit-user`;
