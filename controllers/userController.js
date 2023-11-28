@@ -80,11 +80,11 @@ exports.editUser = (req, res, next) => {
             res.json({
               success: true,
               token: token,
-              identifier: req.user.identifier,
-              email: req.user.email,
-              firstName: req.user.firstName,
-              lastName: req.user.lastName,
-              phone: req.user.phone,
+              identifier: user.identifier,
+              email: user.email,
+              firstName: user.firstName,
+              lastName: user.lastName,
+              phone: user.phone,
               status: 'User infos successfully updated',
             });
           }
