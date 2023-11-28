@@ -21,7 +21,6 @@ import Profile from "./pages/myAccount/components/Profile";
 import { logout } from "./api";
 import PrivateRoute from "./utils/PrivateRoute";
 
-
 const token = localStorage.getItem('accessToken');
 if (token) {
   const decodedToken = jwtDecode(token);
@@ -34,6 +33,7 @@ if (token) {
 
 function App() {
   const { activeMenu } = useStateContext();
+  
   return (
     <BrowserRouter>
       <div className="relative">

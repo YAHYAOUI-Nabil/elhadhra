@@ -12,7 +12,8 @@ exports.signup = (req, res, next) => {
       lastName: req.body.lastName,
       phone: req.body.phone,
       isFan: req.body.isFan,
-      isAdmin: req.body.isAdmin
+      isAdmin: req.body.isAdmin,
+      isSuperAdmin: req.body.isSuperAdmin
     })
     User.register(
       newUser,
@@ -30,7 +31,7 @@ exports.signup = (req, res, next) => {
             res.json({
               success: true,
               token: token,
-              pseudo: user.identifier,
+              identifier: user.identifier,
               email: user.email,
               firsName: user.firstName,
               lastName: user.lastName,
@@ -51,7 +52,7 @@ exports.signin = (req, res, next) => {
     res.json({
       success: true,
       token: token,
-      pseudo: req.user.identifier,
+      identifier: req.user.identifier,
       email: req.user.email,
       firstName: req.user.firstName,
       lastName: req.user.lastName,
@@ -59,3 +60,64 @@ exports.signin = (req, res, next) => {
       status: 'You are successfully logged in!',
     });
   };
+
+exports.editUser = (req, res, next) => {
+  const token =  req.headers.authorization.split(" ")[1];
+    const updatedUser = {
+      identifier: req.body.identifier,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      phone: req.body.phone,
+      isFan: req.body.isFan,
+      isAdmin: req.body.isAdmin,
+      isSuperAdmin: req.body.isSuperAdmin
+    }
+    User.findByIdAndUpdate(req.user._id, updatedUser, { new: true })
+        .then((user) => {
+          if(user) {
+            res.statusCode= 201;
+            res.setHeader('Content-Type', 'application/json'); 
+            res.json({
+              success: true,
+              token: token,
+              identifier: req.user.identifier,
+              email: req.user.email,
+              firstName: req.user.firstName,
+              lastName: req.user.lastName,
+              phone: req.user.phone,
+              status: 'User infos successfully updated',
+            });
+          }
+          else {
+            res.statusCode= 404;
+            res.setHeader('Content-Type', 'application/json'); 
+            res.json({message: "user not found"});
+          }
+        })
+        .catch((err) => {
+          res.statusCode = 404;
+          res.setHeader('Content-Type', 'application/json'); 
+          res.json(err);
+        })
+}
+
+exports.deleteAccount = (req, res, next) => {
+    User.findOneAndRemove({email: req.user.email})
+        .then((user) => {
+          if(user) {
+            res.statusCode= 200;
+            res.setHeader('Content-Type', 'application/json'); 
+            res.json({message: "Account deleted successfully"});
+          }
+          else {
+            res.statusCode= 404;
+            res.setHeader('Content-Type', 'application/json'); 
+            res.json({message: "user not found"});
+          }
+        })
+        .catch((err) => {
+          res.statusCode = 404;
+          res.setHeader('Content-Type', 'application/json'); 
+          res.json(err);
+        })
+}
