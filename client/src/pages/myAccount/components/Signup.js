@@ -1,10 +1,11 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { signup } from "../../../api"
 
 const Signup = () => {
+    const { loading } = useSelector((state) => state.user)
     const dispatch = useDispatch();
     const {
         register,
@@ -27,42 +28,48 @@ const Signup = () => {
                         id='identifier' 
                         type='text'
                         {...register('identifier', { required: true })} />
-                    {errors.identifier && <p>Identifiant est obligatoire.</p>}
+                    {errors.identifier && <p className='text-red-500'>Identifiant est obligatoire.</p>}
                     <label htmlFor="username">E-mail *</label>
                     <input 
                         className='focus:outline-none h-9 p-3 text-[#8B8DA5]'
                         id='username'
                         type='email'
-                        {...register('username', { required: true })} />
-                    {errors.username && <p>E-mail est obligatoire.</p>}
+                        {...register('username', { required: true , pattern: {
+                            value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                            message: 'svp entrer un email valide.',
+                        }})} />
+                    {errors.username?.message && <p className='text-red-500'>{errors.username?.message}</p>}
                     <label htmlFor="password">Mot de passe *</label>
                     <input 
                         className='focus:outline-none h-9 p-3 text-[#8B8DA5]'
                         id='password' 
                         type='password'
-                        {...register('password', { required: true })} />
-                    {errors.password && <p>Mot de passe est obligatoire.</p>}
+                        {...register('password', { required: true, pattern: {
+                            value: /^[a-zA-Z0-9]{8,}/,
+                            message: 'minimum 08 caractères',
+                        } })} />
+                    {errors.password?.message && <p className='text-red-500'>{errors.password?.message}</p>}
                     <label htmlFor="firstName">Prénom *</label>
                     <input 
                         className='focus:outline-none h-9 p-3 text-[#8B8DA5]'
                         id='firstName'
                         type='text'
                         {...register('firstName', { required: true })} />
-                    {errors.firstName && <p>Prénom est obligatoire.</p>}
+                    {errors.firstName && <p className='text-red-500'>Prénom est obligatoire.</p>}
                     <label htmlFor="lastName">Nom *</label>
                     <input 
                         className='focus:outline-none h-9 p-3 text-[#8B8DA5]'
                         id='lastName' 
                         type='text'
                         {...register('lastName', { required: true })} />
-                    {errors.lastName && <p>Nom est obligatoire.</p>}
+                    {errors.lastName && <p className='text-red-500'>Nom est obligatoire.</p>}
                     <label htmlFor="phone">Téléphone *</label>
                     <input 
                         className='focus:outline-none h-9 p-3 text-[#8B8DA5]'
                         id='phone'
                         type='tel'
                         {...register('phone', { required: true })} />
-                    {errors.phone && <p>Téléphone est obligatoire.</p>}
+                    {errors.phone && <p className='text-red-500'>Téléphone est obligatoire.</p>}
                     <div className='flex flex-row items-start'>
                         <input
                             id='policy'
@@ -77,8 +84,9 @@ const Signup = () => {
                     </div>
                     <div className='bg-red-500 rounded-full w-fit'>
                         <input 
-                            className='border-2 border-black rounded-full w-fit px-6 py-2 uppercase font-bold text-white -translate-x-1 -translate-y-1 cursor-pointer'
+                            className={`border-2 border-black rounded-full w-fit px-6 py-2 uppercase font-bold text-white -translate-x-1 -translate-y-1 ${loading ? 'cursor-not-allowed' : 'cursor-pointer'}`}
                             type="submit" 
+                            disabled = {loading ? true : false}
                             value="S'enregistrer" />
                     </div>
                 </form>

@@ -5,6 +5,9 @@ const limiter = require('../middlewares/limiter');
 
 
 exports.signup = (req, res, next) => {
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+  if (!emailRegex.test(req.body.username)) { return res.status(404).json({message: "addresse email non valide."})}
+
     const newUser = new User({
       identifier: req.body.identifier, 
       email: req.body.username,

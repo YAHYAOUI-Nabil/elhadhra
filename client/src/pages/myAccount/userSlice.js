@@ -34,14 +34,16 @@ export const userSlice = createSlice({
               ...state,
               loading: false,
               user: action.payload,
-              response: "signin",
+              response: "Connexion effectuée avec succée",
               isAuth: true
             }
           })
           .addCase(signin.rejected, (state, action) => {
             return {
               ...state,
+              loading: false,
               error: action.error.message,
+              response: "Email ou password incorrect",
               user: {}
             }
           })
@@ -60,6 +62,7 @@ export const userSlice = createSlice({
           .addCase(signup.rejected, (state, action) => {
             return {
               ...state,
+              loading: false,
               error: action.error.message,
               user: {}
             }
@@ -76,6 +79,7 @@ export const userSlice = createSlice({
           .addCase(logout.rejected, (state) => {
             return {
               ...state,
+              loading: false,
             }
           })
           .addCase(deleteAccount.pending, (state) => {
@@ -90,6 +94,7 @@ export const userSlice = createSlice({
           .addCase(deleteAccount.rejected, (state) => {
             return {
               ...state,
+              loading: false,
             }
           })
           .addCase(editInfos.pending, (state) => {
@@ -101,6 +106,7 @@ export const userSlice = createSlice({
           .addCase(editInfos.fulfilled, (state, action) => {
             return {
               ...state,
+              loading: false,
               user: action.payload,
               response: "user infos updated successfully"
             }
@@ -108,6 +114,7 @@ export const userSlice = createSlice({
           .addCase(editInfos.rejected, (state) => {
             return {
               ...state,
+              loading: false,
               response: "user infos not updated",
             }
           })
