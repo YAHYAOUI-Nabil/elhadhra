@@ -214,7 +214,7 @@
                                         <div 
                                             class="top-container" 
                                             style="
-                                                    background-image: url({{eventImageUrl}});
+                                                    {{!-- background-image: url({{eventImageUrl}}); --}}
                                                     background-position: center;
                                                     background-size: cover; 
                                                     background-repeat: no-repeat;
@@ -225,15 +225,13 @@
                                             <div class="top-content">
                                                 <div class="top-content-text">
                                                     <h2 class="title">
-                                                        {{title}}
+                                                        {{authCode}}
                                                     </h2>
 
                                                     <p class="description">
                                                         Pour confirmer votre réservation à notre prochain évènement, veuillez cliquer ci-dessous :
                                                     </p>
-                                                    <p class="btn-confirm" style="padding: 6px 12px;">
-                                                        <a href={{eventLink}} style="text-decoration-line: none;" >Confirmer la participation</a>
-                                                    </p>
+                                                    
                                                 </div>
                                             </div>
                                         </div>

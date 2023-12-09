@@ -11,6 +11,25 @@ require('dotenv').config();
 
 
 passport.use(new LocalStrategy(User.authenticate()));
+// passport.use(new LocalStrategy(
+//   (username, password, done) => {
+//     User.findOne({ email: username })
+//         .then((user) => {
+//           if (!user) {
+//             return done(null, false);
+//           } 
+//           // else if (!user.verifyPassword(password)) {
+//           //   return done(null, false);
+//           // }
+//           else {
+//             return done(null, user);
+//           }
+//         })
+//         .catch((err) => {
+//           return done(err, false); 
+//         })
+//   }
+// ));
 passport.use(new JwtStrategy(opts, (jwt_payload, done) => {
     User.findOne({ _id: jwt_payload._id })
         .then((user) => {
@@ -28,7 +47,6 @@ passport.use(new JwtStrategy(opts, (jwt_payload, done) => {
 );
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
-
 
 
 exports.getToken = (user) => {

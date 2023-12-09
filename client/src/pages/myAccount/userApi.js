@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { signinUrl, signupUrl, deleteAccountUrl, editInfosUrl } from '../../config/apiUrls';
+import { signinUrl, signupUrl, deleteAccountUrl, editInfosUrl, validateUserUrl } from '../../config/apiUrls';
 
 
 export const signin = createAsyncThunk(
@@ -33,6 +33,14 @@ export const editInfos = createAsyncThunk(
     "auth/editInfos",
     async (formData) => {
         const response = await axios.put(editInfosUrl, formData);
+        return response.data
+    }
+) 
+
+export const validateUser = createAsyncThunk(
+    "auth/validateUser",
+    async (formData) => {
+        const response = await axios.put(validateUserUrl, formData);
         return response.data
     }
 ) 

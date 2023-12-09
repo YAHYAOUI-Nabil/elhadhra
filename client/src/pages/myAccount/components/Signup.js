@@ -14,6 +14,8 @@ const Signup = () => {
       } = useForm();
 
     const submit = (data) => {
+        localStorage.setItem('emailValidation', data.username)
+        localStorage.setItem('passwordValidation', data.password)
         dispatch(signup(data))
     }
     
