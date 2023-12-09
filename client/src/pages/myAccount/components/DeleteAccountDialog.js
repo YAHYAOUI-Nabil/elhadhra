@@ -3,7 +3,7 @@ import { MdOutlineClose } from "react-icons/md";
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 
-import { deleteAccount } from '../../../api'
+import { deleteAccount } from '../../../api';
 
 
 const DeleteAccountDialog = (props) => {

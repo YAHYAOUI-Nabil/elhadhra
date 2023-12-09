@@ -2,20 +2,20 @@ const nodemailer = require('nodemailer');
 const hbs = require("nodemailer-express-handlebars");
 require('dotenv').config();
 
-const sendConfirmationEmail = ({email, eventTitle, eventImageUrl, activationCode}) => {
+const sendConfirmationEmail = ({email, authCode}) => {
   
   let transporter = nodemailer.createTransport({
-    service: 'edenmed.tn',
-    host: 'webmail.edenmed.tn',
-    // service: 'gmail',
-    // host: 'smtp.gmail.com',
+    // service: 'edenmed.tn',
+    // host: 'webmail.edenmed.tn',
+    service: 'gmail',
+    host: 'smtp.gmail.com',
     secureConnection: false, // TLS requires secureConnection to be false
     port: 465, // port for secure SMTP
     auth: {
       user: process.env.NODEMAILER_EMAIL,
       pass: process.env.NODEMAILER_PASSWORD,
     },
-    from: process.env.NODEMAILER_EMAIL,
+    from: 'yahyaouinabil1993@gmail.com',
     tls: {
       rejectUnauthorized: false,
       // ciphers: 'SSLv3',
@@ -55,9 +55,7 @@ const sendConfirmationEmail = ({email, eventTitle, eventImageUrl, activationCode
         cid: 'youtube-icon'
       }],
     context: {
-              title: eventTitle,
-              eventLink: `${process.env.CONFIRM_MAIL_HOST}#/confirmation/${activationCode}`,
-              eventImageUrl : eventImageUrl,
+              authCode: authCode,
           } 
   };
 
