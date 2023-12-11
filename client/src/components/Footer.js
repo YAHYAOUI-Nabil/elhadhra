@@ -4,10 +4,10 @@ import { BsInstagram, BsYoutube, BsTwitter, BsTelegram } from "react-icons/bs";
 const Footer = () => {
   return (
     <div className="bg-black text-white">
-      <div className="flex justify-between items-center m-4 py-4 border-b-2 border-white">
+      <div className="flex lg:flex-row flex-col lg:justify-between lg:gap-0 gap-4 items-center m-4 py-4 border-b-2 border-white">
         <div>
-          <h1 className="uppercase text-3xl font-bold">newsletter</h1>
-          <p>Recevoir chaque jour les titres à la Une</p>
+          <h1 className="uppercase text-3xl font-bold lg:text-left text-center">newsletter</h1>
+          <p className="lg:text-left text-center">Recevoir chaque jour les titres à la Une</p>
         </div>
         <div className="">
           <button className="px-8 py-2 border-2 border-white rounded-full uppercase text-lg font-semibold">recevoir la lettre d'information</button>
@@ -43,7 +43,7 @@ const Footer = () => {
             </a>
         </div>
       </div>
-      <div className="flex justify-between py-6 w-full">
+      <div className="flex lg:flex-row flex-col lg:justify-between py-6 w-full">
         <div className="p-4 w-1/4">
           <p className="text-gray-400 mb-3">Le Journal</p>
           <ul className="flex flex-col gap-2">
@@ -64,7 +64,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="border-l-2 border-white p-4 w-1/4">
+        <div className="lg:border-l-2 lg:border-t-0 border-t-2 border-white p-4 lg:w-1/4">
           <p className="text-gray-400 mb-3">le Studio</p>
           <ul className="flex flex-col gap-2">
             <li>
@@ -78,7 +78,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="border-l-2 border-white p-4 w-1/4">
+        <div className="lg:border-l-2 lg:border-t-0 border-t-2 border-white p-4 lg:w-1/4">
           <p className="text-gray-400 mb-3">A propos</p>
           <ul className="flex flex-col gap-2">
             <li>
@@ -101,7 +101,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="border-l-2 border-white p-4 w-1/4">
+        <div className="lg:border-l-2 lg:border-t-0 border-t-2 border-white p-4 lg:w-1/4">
           <p className="text-gray-400 mb-3">Légal</p>
           <ul className="flex flex-col gap-2">
             <li>
