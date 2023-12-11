@@ -4,7 +4,7 @@ import { signin, signup, logout, deleteAccount, editInfos, validateUser } from '
 const initialState = {
   loading: false,
   updateState: false,
-  error: "",
+  error: {},
   response: "",
   user: {},
   isRegistered: false,
@@ -44,7 +44,7 @@ export const userSlice = createSlice({
             return {
               ...state,
               loading: false,
-              error: action.error.message,
+              error: action.error,
               response: "Email ou password incorrect",
               user: {}
             }
@@ -85,11 +85,10 @@ export const userSlice = createSlice({
           .addCase(validateUser.rejected, (state, action) => {
             return {
               ...state,
-              error: action.error.message,
+              loading: false,
+              error: action.error,
               user: {},
               response: "user registered and not validated",
-              isAuth: false,
-              isValid: false,
             }
           })
           .addCase(logout.pending, (state) => {
