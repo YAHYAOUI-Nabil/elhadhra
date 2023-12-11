@@ -20,6 +20,9 @@ import { useStateContext } from "./context/ContextProvider";
 import Profile from "./pages/myAccount/components/Profile";
 import { logout } from "./api";
 import PrivateRoute from "./utils/PrivateRoute";
+import Signup from "./pages/myAccount/components/Signup";
+import Signin from "./pages/myAccount/components/Signin";
+import ValidateUser from "./pages/myAccount/components/ValidateUser";
 
 const token = localStorage.getItem('accessToken');
 if (token) {
@@ -55,6 +58,9 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/qui-sommes-nous" element={<AboutUS />} />
               <Route path="/mon-compte" element={<Account />} />
+              <Route path="/mon-compte/signup" element={<Signup />} />
+              <Route path="/mon-compte/signin" element={<Signin />} />
+              <Route path="/mon-compte/validation-de-compte" element={<ValidateUser />} />
               <Route path="/mon-compte/profil" element={<PrivateRoute Component={Profile} /> } />
               <Route path="/category/:category" element={<ArticlesByCategory />} />
               <Route path="/category/article/:id" element={<ArticleDetails />} />

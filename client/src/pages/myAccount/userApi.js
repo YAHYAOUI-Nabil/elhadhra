@@ -16,7 +16,6 @@ export const signup = createAsyncThunk(
     "auth/signup",
     async (formData) => {
         const response = await axios.post(signupUrl, formData);
-        localStorage.setItem("accessToken", response.data.token);
         return response.data
     }
 ) 
@@ -40,8 +39,9 @@ export const editInfos = createAsyncThunk(
 export const validateUser = createAsyncThunk(
     "auth/validateUser",
     async (formData) => {
-        const response = await axios.put(validateUserUrl, formData);
-        return response.data
+            const response = await axios.put(validateUserUrl, formData);
+            localStorage.setItem("accessToken", response.data.token);
+            return response.data
     }
 ) 
 
@@ -49,6 +49,7 @@ export const deleteAccount = createAsyncThunk(
     "auth/deleteAccount",
     async () => {
         const response = await axios.delete(deleteAccountUrl);
+        localStorage.removeItem("accessToken");
         return response.data
     }
 ) 
