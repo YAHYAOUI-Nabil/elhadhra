@@ -10,7 +10,7 @@ const Footer = () => {
           <p className="lg:text-left text-center">Recevoir chaque jour les titres à la Une</p>
         </div>
         <div className="">
-          <button className="md:px-8 px-4 py-2 border-2 border-white rounded-full uppercase md:text-lg font-semibold">recevoir la lettre d'information</button>
+          <button className="md:px-8 px-4 py-2 border-2 border-white rounded-full uppercase md:text-lg sm:text-base text-sm font-semibold">recevoir la lettre d'information</button>
         </div>
         <div className="flex justify-between gap-6">
           <a 

@@ -31,7 +31,7 @@ const ValidateUser = () => {
                 ?
                     <Navigate to={'/mon-compte/profil'} />
                 :
-                    <div className="flex justify-center items-center px-24 py-24">
+                    <div className="flex justify-center items-center xl:px-24 lg:px-16 md:px-8 px-4 lg:py-24 py-8">
                         <div className='flex flex-col gap-4 lg:w-1/2 w-full bg-[#F5F5F5] p-8'>
                             <p>Un code de vérification a été envoyé pour votre addresse email. svp taper le code pour valider votre compte.</p>
                             <div className='mt-8'>
