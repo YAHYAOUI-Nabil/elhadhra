@@ -3,14 +3,14 @@ import { BsInstagram, BsYoutube, BsTwitter, BsTelegram } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <div className="bg-black text-white">
-      <div className="flex lg:flex-row flex-col lg:justify-between lg:gap-0 gap-4 items-center m-4 py-4 border-b-2 border-white">
+    <div className="flex flex-col gap-5 bg-black text-white">
+      <div className="flex lg:flex-row flex-col lg:justify-between lg:gap-0 gap-5 items-center mx-4 pt-4 pb-2 lg:border-b-2 border-white">
         <div>
-          <h1 className="uppercase text-3xl font-bold lg:text-left text-center">newsletter</h1>
+          <h1 className="uppercase md:text-3xl text-2xl font-bold lg:text-left text-center">newsletter</h1>
           <p className="lg:text-left text-center">Recevoir chaque jour les titres à la Une</p>
         </div>
         <div className="">
-          <button className="px-8 py-2 border-2 border-white rounded-full uppercase text-lg font-semibold">recevoir la lettre d'information</button>
+          <button className="md:px-8 px-4 py-2 border-2 border-white rounded-full uppercase md:text-lg font-semibold">recevoir la lettre d'information</button>
         </div>
         <div className="flex justify-between gap-6">
           <a 
@@ -43,8 +43,8 @@ const Footer = () => {
             </a>
         </div>
       </div>
-      <div className="flex lg:flex-row flex-col lg:justify-between py-6 w-full">
-        <div className="p-4 w-1/4">
+      <div className="flex lg:flex-row lg:gap-0 gap-8 flex-col lg:justify-between py-2 w-full">
+        <div className="lg:border-t-0 border-t-2 border-white lg:mx-0 mx-4 lg:px-4 px-0 py-4 lg:w-1/4">
           <p className="text-gray-400 mb-3">Le Journal</p>
           <ul className="flex flex-col gap-2">
             <li>
@@ -64,7 +64,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="lg:border-l-2 lg:border-t-0 border-t-2 border-white p-4 lg:w-1/4">
+        <div className="lg:border-l-2 lg:border-t-0 border-t-2 border-white lg:mx-0 mx-4 lg:px-4 px-0 py-4 lg:w-1/4">
           <p className="text-gray-400 mb-3">le Studio</p>
           <ul className="flex flex-col gap-2">
             <li>
@@ -78,7 +78,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="lg:border-l-2 lg:border-t-0 border-t-2 border-white p-4 lg:w-1/4">
+        <div className="lg:border-l-2 lg:border-t-0 border-t-2 border-white lg:mx-0 mx-4 lg:px-4 px-0 py-4 lg:w-1/4">
           <p className="text-gray-400 mb-3">A propos</p>
           <ul className="flex flex-col gap-2">
             <li>
@@ -101,7 +101,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="lg:border-l-2 lg:border-t-0 border-t-2 border-white p-4 lg:w-1/4">
+        <div className="lg:border-l-2 lg:border-t-0 border-t-2 border-white lg:mx-0 mx-4 lg:px-4 px-0 py-4 lg:w-1/4">
           <p className="text-gray-400 mb-3">Légal</p>
           <ul className="flex flex-col gap-2">
             <li>
@@ -115,6 +115,11 @@ const Footer = () => {
             </li>
           </ul>
         </div>
+      </div>
+      <div className="pb-6">
+          <p className="text-center text-sm">
+            © Copyright 2023 CodeIn. Tous droits reservés.
+          </p>
       </div>
     </div>
   )
