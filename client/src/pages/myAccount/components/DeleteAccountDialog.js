@@ -25,7 +25,7 @@ const DeleteAccountDialog = (props) => {
         }
     }
     return (
-        <div className='fixed top-1/4 left-1/4 z-[999999999999999] lg:w-1/2 w-full p-8 bg-gray-200 rounded-xl shadow-xl'>
+        <div className='fixed md:top-1/4 lg:left-1/4 top-1/4 left-[2%] z-[999999999999999] lg:w-1/2 w-[96%] p-8 bg-gray-200 rounded-xl shadow-xl'>
             <div className='absolute top-1 right-1 flex items-center justify-center bg-white rounded-full w-6 h-6'>
                 <button 
                     onClick={() => setOpenModal(false)}
