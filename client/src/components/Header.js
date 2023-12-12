@@ -12,7 +12,7 @@ const Header = () => {
   }
   return (
     <>
-      <div className="flex justify-between items-center h-32 bg-black w-full px-24">
+      <div className="md:flex hidden justify-between items-center h-32 bg-black w-full xl:px-24 lg:px-16 md:px-8">
         <div className="w-36 border-2 border-red-600">
           <NavLink to="/" className="font-bold text-6xl">
             <img src={logo} alt="ELHADHIRA" />

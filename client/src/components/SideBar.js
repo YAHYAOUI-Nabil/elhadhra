@@ -12,7 +12,7 @@ const SideBar = () => {
     const { activeMenu, setActiveMenu } = useStateContext();
   return (
     <div className='w-screen h-screen flex'>
-        <div className={`relative flex flex-col gap-6 bg-black overflow-y-scroll scrollbar-hide w-[25%] h-screen p-6`}>
+        <div className={`relative flex flex-col gap-6 bg-black overflow-y-scroll scrollbar-hide xl:w-[30%] lg:w-[40%] md:w-[45%] w-[90%] h-screen p-6`}>
             <div 
                 onClick={() => setActiveMenu(!activeMenu)}
                 className='absolute flex items-center justify-center w-6 h-6 cursor-pointer bg-white hover:bg-red-600 hover:text-white rounded-full top-2 right-2'>
@@ -96,7 +96,7 @@ const SideBar = () => {
                     </div>
             </div>
         </div>
-        <div className='h-screen w-[75%]' onClick={() => setActiveMenu(false)}></div>
+        <div className='h-screen xl:w-[70%] lg:w-[60%] md:w-[55%] w-[10%]' onClick={() => setActiveMenu(false)}></div>
     </div>
   )
 }
