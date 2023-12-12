@@ -18,9 +18,9 @@ const Article = (props) => {
         <div className='flex flex-col gap-2'>
             <p className='text-red-900 uppercase text-lg font-bold'>{category}</p>
             {divider && <div className='border-b-[1px] border-black w-16'></div>}
-            <NavLink to={`/category/article/${id}`}><p className={`text-black text-${size}xl font-semibold hover:text-red-900`}>{title}</p></NavLink>
+            <NavLink to={`/category/article/${id}`}><p className={`text-black md:text-${size}xl text-lg font-semibold hover:text-red-900`}>{title}</p></NavLink>
             {author && <p className='text-sm -mt-2'>Rédigé par {author}</p>}
-            {description && <p className='text-base'>{description?.length < maxLength ? description : description?.slice(0,maxLength)+'...'}</p>}
+            {description && <p className='md:text-base text-sm'>{description?.length < maxLength ? description : description?.slice(0,maxLength)+'...'}</p>}
         </div>
     </div>
   );
