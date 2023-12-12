@@ -12,7 +12,19 @@ import 'swiper/css/navigation';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { NavLink } from 'react-router-dom';
 
+
+
 const Slider = ({title, articles}) => {
+  const Swiper = new Swiper('.swiper', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    breakpoints: {
+      768: {
+        slidesPerView: 3.5,
+        spaceBetween: 10
+      }
+    }
+  })
   return (
     <div className='flex flex-col gap-2 my-4 bg-red-900 -mx-24 px-24 py-8'>
       <Title title={title} color="white" />
@@ -20,6 +32,7 @@ const Slider = ({title, articles}) => {
         <Swiper
           slidesPerView={3.5}
           spaceBetween={10}
+          
           autoplay={{
               delay: 3500,
               disableOnInteraction: false,
@@ -35,7 +48,7 @@ const Slider = ({title, articles}) => {
               <div className='flex flex-col items-center justify-center'>
                   <NavLink to={`/category/article/${item._id}`}>
                     <img 
-                      className='w-96 h-48 object-cover' 
+                      className='md:w-96 w-full h-48 object-cover' 
                       src={item.imageUrl}
                       alt={item.title} />
                   </NavLink>

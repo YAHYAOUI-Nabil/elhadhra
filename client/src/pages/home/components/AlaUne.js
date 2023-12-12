@@ -13,7 +13,7 @@ const AlaUne = ({articles}) => {
   return (
     <div className='flex flex-col gap-4 my-4'>
       <Title title="à la une :" color="black" />
-      <div className='gap-[1%] grid grid-cols-[49%,29%,20%]'>
+      <div className='gap-[1%] lg:grid grid-cols-[49%,29%,20%] flex flex-col'>
         <div className=''>
           <Article 
             id={immigration?._id}
@@ -24,7 +24,7 @@ const AlaUne = ({articles}) => {
             divider={true}
             author={immigration?.author}
             description={immigration?.description}
-            height="h-[300px]" />
+            height="md:h-[300px] h-[200px]" />
         </div>
         <div className='flex flex-col gap-6'>
           {list?.map((item) => (
@@ -36,7 +36,7 @@ const AlaUne = ({articles}) => {
               title={item?.title}
               size={2}
               divider={true}
-              height="h-[200px]"
+              height="md:h-[200px] h-[150px]"
             />
           ))}
         </div>

@@ -21,7 +21,7 @@ const Index = () => {
   }, [dispatch])
 
   return (
-    <div className="px-24 py-4">
+    <div className="xl:px-24 lg:px-16 md:px-8 px-4 py-4">
       <Recents articles={data.articles} /> 
       <AlaUne articles={data.articles} />
       <Slider title="La rédaction vous conseille" articles={data.articles} />

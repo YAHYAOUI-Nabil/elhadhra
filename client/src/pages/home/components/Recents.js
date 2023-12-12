@@ -14,7 +14,7 @@ import { NavLink } from 'react-router-dom';
 
 const Recents = ({articles}) => {
   return (
-    <>
+    <div className='md:flex hidden'>
       <Swiper
         slidesPerView={5}
         spaceBetween={30}
@@ -31,7 +31,7 @@ const Recents = ({articles}) => {
                 <div className='flex flex-col items-center justify-center gap-4 p-2'>
                     <NavLink to={`/category/article/${item._id}`}>
                       <img 
-                        className='w-20 h-20 rounded-2xl object-cover' 
+                        className='lg:w-20 lg:h-20 w-12 h-12 rounded-2xl object-cover' 
                         src={item.imageUrl} 
                         alt={item.title} />
                     </NavLink>
@@ -42,7 +42,7 @@ const Recents = ({articles}) => {
             </SwiperSlide>
         ))}
       </Swiper>
-    </>
+    </div>
   );
 }
 

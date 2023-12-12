@@ -8,7 +8,7 @@ import { store } from "./reduxTK/store";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./pages/home";
-import Account from "./pages/myAccount";
+// import Account from "./pages/myAccount";
 import ArticlesByCategory from "./pages/articlesByCategory";
 import ArticleDetails from "./pages/articlesDetails";
 import Videos from "./pages/videos";
@@ -57,7 +57,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/qui-sommes-nous" element={<AboutUS />} />
-              <Route path="/mon-compte" element={<Account />} />
+              {/* <Route path="/mon-compte/signup" element={<Account />} /> */}
               <Route path="/mon-compte/signup" element={<Signup />} />
               <Route path="/mon-compte/signin" element={<Signin />} />
               <Route path="/mon-compte/validation-de-compte" element={<ValidateUser />} />
