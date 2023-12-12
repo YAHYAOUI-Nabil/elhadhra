@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
 import "./App.css";
@@ -38,7 +38,7 @@ function App() {
   const { activeMenu } = useStateContext();
   
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="relative">
         { 
           activeMenu 
@@ -70,7 +70,7 @@ function App() {
           <Footer />
         </div>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
