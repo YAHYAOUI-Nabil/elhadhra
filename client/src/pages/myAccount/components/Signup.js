@@ -38,8 +38,8 @@ const Signup = () => {
                 ?
                     <Navigate to={'/mon-compte/profil'} />
                 :
-                    <div className="flex items-center justify-center px-24 py-24">
-                        <div className='flex flex-col gap-4 w-1/2 bg-[#F5F5F5] p-8'>
+                    <div className="flex items-center justify-center xl:px-24 lg:px-16 md:px-8 px-4 lg:py-24 py-8">
+                        <div className='flex flex-col gap-4 lg:w-1/2 w-full bg-[#F5F5F5] p-8'>
                             <h2 className='font-bold text-xl'>S'enregistrer</h2>
                             <div>
                                 <form className='flex flex-col gap-5' onSubmit={handleSubmit(submit)}>

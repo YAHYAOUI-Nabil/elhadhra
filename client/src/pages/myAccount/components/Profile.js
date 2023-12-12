@@ -17,13 +17,13 @@ const Profile = () => {
 
     
   return (
-    <div className="px-24 pt-10 pb-2">
-        <div className='flex flex-row gap-6'>
-            <div className='flex flex-col gap-6 w-3/4'>
+    <div className="xl:px-24 lg:px-16 md:px-8 px-4 pt-10 pb-2">
+        <div className='flex lg:flex-row flex-col gap-6'>
+            <div className='flex flex-col gap-6 lg:w-3/4'>
                 <Title title="Mon compte" color="black" />
                 {openModal && <DeleteAccountDialog email={user.email} setOpenModal={setOpenModal} />}
-                <div className='flex flex-col items-center gap-8 p-6'> 
-                    <div className='flex flex-col gap-3 border-2 border-gray-100 rounded-2xl p-6 shadow-md shadow-gray-300 w-[500px]'>
+                <div className='flex flex-col items-center gap-8 lg:p-6'> 
+                    <div className='flex flex-col gap-3 border-2 border-gray-100 rounded-2xl p-6 shadow-md shadow-gray-300 lg:w-[500px] w-full'>
                         <p className='text-lg font-semibold'>Addresse Email</p>
                         <input 
                             type='email' 
@@ -37,7 +37,7 @@ const Profile = () => {
                                 Changer l'addresse email
                         </button>
                     </div>
-                    <div className='flex flex-col gap-3 border-2 border-gray-100 rounded-2xl p-6 shadow-md shadow-gray-300 w-[500px]'>
+                    <div className='flex flex-col gap-3 border-2 border-gray-100 rounded-2xl p-6 shadow-md shadow-gray-300 lg:w-[500px] w-full'>
                         <p className='text-lg font-semibold mb-2'>Mot de passe</p>
                         <label className='text-sm font-semibold'>Mot de passe actuel</label>
                         <input 
@@ -64,7 +64,7 @@ const Profile = () => {
 
                     <EditInfosForm user={user} />
                         
-                    <div className='flex flex-col gap-3 border-2 border-gray-100 rounded-2xl p-6 shadow-md shadow-gray-300 w-[500px]'>
+                    <div className='flex flex-col gap-3 border-2 border-gray-100 rounded-2xl p-6 shadow-md shadow-gray-300 lg:w-[500px] w-full'>
                         <p className='text-lg font-semibold'>Supprimer mon compte</p>
                         <p>Vous allez perdre votre compte définitivement dés que vous confirmez la suppression de votre compte.</p>
                         <div className='flex justify-end'>
@@ -78,7 +78,7 @@ const Profile = () => {
                     </div>
                 </div>
             </div>
-            <div className='w-1/4 flex flex-col gap-4'>
+            <div className='lg:w-1/4 flex flex-col gap-4 lg:mb-0 mb-2'>
                 <SalePoint />
                 <FlashAct />
                 <LettreInf />

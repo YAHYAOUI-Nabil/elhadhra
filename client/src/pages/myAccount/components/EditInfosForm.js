@@ -25,7 +25,7 @@ const EditInfosForm = ({user}) => {
     }
     
     return (
-        <div className='flex flex-col gap-3 border-2 border-gray-100 rounded-2xl p-6 shadow-md shadow-gray-300 w-[500px]'>
+        <div className='flex flex-col gap-3 border-2 border-gray-100 rounded-2xl p-6 shadow-md shadow-gray-300 lg:w-[500px] w-full'>
             <p className='text-lg font-semibold'>Informations personnelles</p>
             <form className='flex flex-col gap-3' onSubmit={handleSubmit(submit)}>
                 <label htmlFor="identifier" className='text-sm font-semibold'>Identifiant</label>
