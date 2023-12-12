@@ -15,16 +15,7 @@ import { NavLink } from 'react-router-dom';
 
 
 const Slider = ({title, articles}) => {
-  const Swiper = new Swiper('.swiper', {
-    slidesPerView: 1,
-    spaceBetween: 10,
-    breakpoints: {
-      768: {
-        slidesPerView: 3.5,
-        spaceBetween: 10
-      }
-    }
-  })
+  
   return (
     <div className='flex flex-col gap-2 my-4 bg-red-900 -mx-24 px-24 py-8'>
       <Title title={title} color="white" />
